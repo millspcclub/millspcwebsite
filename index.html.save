@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mills PC Club!</title>
+  </head>
+  <body>
+    <div align="left">    
+      <body bgcolor="#ABD0BC">
+      <img src="/logo.png">
+	<font face="verdana" size="7" color="#a83719">Mills PC Club</font>
+	&nbsp
+	&nbsp
+	&nbsp
+	<font face="verdana" size="3" color="#a83719"><a href="/contact.html">Contact Us!</a></font>
+	<hr color="black">
+	<br>
+	<font face="verdana" size="3" color="#a83719">About Us!</font>	</div>
+      </body>
+   </body>
+</html>
