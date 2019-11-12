@@ -1,4 +1,5 @@
 body {
+    background: white;
     font-family: 'Fira Code', monospace;
     margin: 0;
     position: relative;
@@ -8,13 +9,24 @@ body {
     font-weight: bold;
 }
 
+
 .intro {
-    min-height: 73vh;
+    background: white;
     display: flex;
     text-align: center;
     align-items: center;
     justify-content: center;
     padding: 50px;
+}
+
+.intro {
+    height: 99vh;
+}
+
+@media only screen and (max-width: 600px) {
+    .intro {
+        height: 87vh;
+    }
 }
 
 .title {
@@ -35,8 +47,9 @@ body {
 }
 
 #announcements {
+    color: white;
     text-align: center;
-    background: #c6c6c6;
+    background: black;
     padding: 50px;
 }
 
@@ -59,11 +72,16 @@ a:link:hover,a:visited:hover {
     color: rgba(43, 179, 255, 0.61)
 }
 
+.section {
+    background: #191919;
+}
+
 .main-content {
+    margin: 0 auto;
+    color: white;
     padding: 40px 20px;
     overflow-x: hidden;
     max-width: 1000px;
-    margin: 0 auto;
 }
 
 .main-content > div > p {
@@ -138,7 +156,6 @@ a:link:hover,a:visited:hover {
 }
 
 .footer {
-    background: #c6c6c6;
     padding: 5vh 20px 20px;
     margin: 0 auto;
     max-width: 1000px;
