@@ -50,8 +50,13 @@ body {
     float: right;
 }
 
-a {
+a:link,a:visited {
     text-decoration: none;
+    color: rgba(43, 179, 255, 0.8)
+}
+
+a:link:hover,a:visited:hover {
+    color: rgba(43, 179, 255, 0.61)
 }
 
 .main-content {
@@ -133,12 +138,12 @@ a {
 }
 
 .footer {
-    padding: 10vh 10vh 0;
+    background: #c6c6c6;
+    padding: 5vh 20px 20px;
     margin: 0 auto;
     max-width: 1000px;
 }
 
 .stuff {
     font-size: 12px;
-    min-height: 10vh;
 }
