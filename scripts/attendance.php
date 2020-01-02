@@ -1,6 +1,11 @@
 
+
 <?php
 
+if (basename($_SERVER['SCRIPT_FILENAME']) === 'attendance.php')
+{
+    exit('You have arrived here in error, please return.');
+}
 header("Content-Transfer-Encoding: UTF-8");
 
 
