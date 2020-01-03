@@ -4,61 +4,36 @@
   <meta content="wbXWDzrlGPDYe5i5khulZPNR__f6cjYzZqVr5P0l81g" name="google-site-verification"/>
   <meta content="yes" name="apple-mobile-web-app-capable">
   <link href="assets/images/logo.png" rel="apple-touch-icon" sizes="128x128">
-
+  <link rel="stylesheet" type="text/css" href="assets/styles/main.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!--I know you will complain about my stylesheet in head-->
-  <style type=text/css>
-
-    div
-    {
-      padding:20px;
-      max-width: 700px;
-      width: 100%;
-      height: 50%;
-      min-width: 960px;
-    }
-    .discord /*For the stupid discord widget that won't behave*/
-    {
-      margin:5px;
-      float:right;
-      padding:10px;
-    }
-    .attendance
-    {
-      float:center;
-    }
-
-  </style>
 
   <link href="myfavicon.ico" rel="icon" type="image/x-icon" />
   <link href="myfavicon.ico" rel="shortcut icon" type="image/x-icon" />
   <title>Mills PC Club!</title>
 </head><!--title text, favicon-->
-<body background="assets/images/background.png">
-<div align="left" padding:50px style="float:center"></div><!--Why do I have this here?????-->
-<a href="/index.html"><img src="/assets/images/logo.png"></a>
-<font color="#a83719" face="verdana" size="7">Mills PC Club  </font><font face="verdana" size="1"><a href="https://instagram.com/millspc.club/ "><img border="0" length="40" src="assets/images/ig.png" width="40"></img></a></font>
-&nbsp;
+<div class="intro">
 
 <center>
-  <br>
-  <div>
-    <font color="#a83719" face="verdana" size="5">Hello to the people who attended! Please input your name and email here.  </font>
-    <br>
-    <br>
+<!--<a href="/index.html"><img src="/assets/images/logo.png" height=50px width=50px></a>-->
+<h1 class="title"><a href=/ style="color: #000000">pc.club</a></h1> <!--note: color tag is added to stop href from recoloring it blue-->
+
+<br>
+
+    <p class="small_subtitle bold">Hello to the people who attended! Please input your name and email here.  </p>
     <form action="/scripts/attendance.php" method="post">
-      <fieldset>
-        <legend><font color="#a83719" face="verdana" size="3">Information:</font></legend>
-        <font color="#a83719" face="verdana" size="3">Full Name? <input name="name" onkeydown="return (event.keyCode!=188);" required type="text"></input></font><br>
-        <font color="#a83719" face="verdana" size="3">eMail? <input name="email" required type="email"></input></font><br>
+
+        <legend class="submit_info_text">Information:</legend>
+        <font class="submit_info_text">Full Name?</font>
+        <input class="submit_info_text" name="name" onkeydown="return (event.keyCode!=188);" required type="text"></input>
+        <font class="submit_info_text">eMail? <input name="email" required type="email" class="submit_info_text"></input></font><br>
         <!--<font face="verdana" size="3" color="#a83719">Code?*Ask Nathan* <input type="text" name="code"></input></font>-->
-        <input type="submit" value="Submit"></input>
+
+        <input type="submit" value="Submit" class="submit_info_text"></input>
         <br>
-        <font color="#a83719" face="verdana" size="3">You will be redirected on submission.</font>
-      </fieldset>
+        <font class="submit_info_text" size="5">You will be redirected on submission.</font>
+
     </form>
-  </div>
 
-
-
-
+</center>
 </html>

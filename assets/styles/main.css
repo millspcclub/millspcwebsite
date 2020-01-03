@@ -32,6 +32,20 @@ body {
 .title {
     font-size: 50px;
     margin: 0;
+    color: #000000;
+}
+
+.small_subtitle{
+  font-size: 18px;
+  color: #727272;
+  margin-bottom: 20px;
+}
+
+.submit_info_text{
+  font-size: 15px;
+  color: #727272;
+  margin-bottom: 15px;
+  font-weight: bold;``
 }
 
 .subtitle {
