@@ -1,3 +1,10 @@
+/** 
+    CSS for PC Club Website
+    Form Animation by Takuma.I
+    Button Animation also by some guy from Code Pen
+**/
+
+/* Universal Properties */
 body {
     background: white;
     font-family: 'Fira Code', monospace;
@@ -5,11 +12,59 @@ body {
     position: relative;
 }
 
+/* Bold Style */
 .bold {
     font-weight: bold;
 }
 
+/* Text Styles */
 
+.title {
+    font-size: 50px;
+    margin: 0;
+    color: #000000;
+}
+
+.subtitle {
+    font-size: 22px;
+    color: #727272;
+    margin-bottom: 30px;
+}
+
+.small_subtitle {
+    font-size: 18px;
+    color: #727272;
+    margin-bottom: 20px;
+}
+
+/* Icons */
+
+.camerathing {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+}
+
+.icons {
+    width: 30px;
+    border: 0;
+}
+
+/* <a href> links */
+
+a:link,
+a:visited {
+    text-decoration: none;
+    color: rgba(43, 179, 255, 0.8)
+}
+
+a:link:hover,
+a:visited:hover {
+    color: rgba(43, 179, 255, 0.61)
+}
+
+/* Sections (blocks) spacing and style */
+/* irst white block */
 .intro {
     background: white;
     display: flex;
@@ -29,63 +84,15 @@ body {
     }
 }
 
-.title {
-    font-size: 50px;
-    margin: 0;
-    color: #000000;
-}
-
-.small_subtitle{
-  font-size: 18px;
-  color: #727272;
-  margin-bottom: 20px;
-}
-
-.submit_info_text{
-  font-size: 15px;
-  color: #727272;
-  margin-bottom: 15px;
-  font-weight: bold;``
-}
-
-.subtitle {
-    font-size: 22px;
-    color: #727272;
-    margin-bottom: 30px;
-}
-
-.camerathing {
-    position: absolute;
-    top: 25px;
-    right: 25px;
-}
-
-#announcements {
+/* Black box (generally used for smaller things) */
+.subsection {
     color: white;
     text-align: center;
     background: black;
     padding: 50px;
 }
 
-.icons {
-    width: 30px;
-    border: 0;
-}
-
-.discord-widget /*For the stupid discord widget that won't behave*/
-{
-    float: right;
-}
-
-a:link,a:visited {
-    text-decoration: none;
-    color: rgba(43, 179, 255, 0.8)
-}
-
-a:link:hover,a:visited:hover {
-    color: rgba(43, 179, 255, 0.61)
-}
-
+/* Main section for main content */
 .section {
     background: #191919;
 }
@@ -98,13 +105,15 @@ a:link:hover,a:visited:hover {
     max-width: 1000px;
 }
 
-.main-content > div > p {
+.main-content>div>p {
     line-height: 1.4;
 }
 
-.main-content > div > ul {
+.main-content>div>ul {
     line-height: 1.4;
 }
+
+/* Button Design | Animation */
 
 .btn {
     margin: 0 auto;
@@ -169,12 +178,103 @@ a:link:hover,a:visited:hover {
     transform: scale(0.1, 1);
 }
 
+/* Credits */
+
 .footer {
     padding: 5vh 20px 20px;
     margin: 0 auto;
     max-width: 1000px;
 }
 
-.stuff {
+.credits {
     font-size: 12px;
+}
+
+/* Input Fields Style | Animation */
+.effect-21~.focus-border:before,
+.effect-21~.focus-border:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background-color: #3399FF;
+    transition: 0.2s;
+    transition-delay: 0.2s;
+}
+
+.effect-21~.focus-border:after {
+    top: auto;
+    bottom: 0;
+    right: auto;
+    left: 0;
+    transition-delay: 0.6s;
+}
+
+.effect-21~.focus-border i:before,
+.effect-21~.focus-border i:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 0;
+    background-color: #3399FF;
+    transition: 0.2s;
+}
+
+.effect-21~.focus-border i:after {
+    left: auto;
+    right: 0;
+    top: auto;
+    bottom: 0;
+    transition-delay: 0.4s;
+}
+
+.effect-21:focus~.focus-border:before,
+.effect-21:focus~.focus-border:after,
+.has-content.effect-21~.focus-border:before,
+.has-content.effect-21~.focus-border:after {
+    width: 100%;
+    transition: 0.2s;
+    transition-delay: 0.6s;
+}
+
+.effect-21:focus~.focus-border:after,
+.has-content.effect-21~.focus-border:after {
+    transition-delay: 0.2s;
+}
+
+.effect-21:focus~.focus-border i:before,
+.effect-21:focus~.focus-border i:after,
+.has-content.effect-21~.focus-border i:before,
+.has-content.effect-21~.focus-border i:after {
+    height: 100%;
+    transition: 0.2s;
+}
+
+.effect-21:focus~.focus-border i:after,
+.has-conten.effect-21~.focus-border i:after {
+    transition-delay: 0.4s;
+}
+
+.effect-21~label {
+    position: absolute;
+    left: 14px;
+    width: 100%;
+    top: 10px;
+    color: #aaa;
+    transition: 0.3s;
+    z-index: -1;
+    letter-spacing: 0.5px;
+}
+
+.effect-21:focus~label,
+.has-content.effect-21~label {
+    top: -18px;
+    left: 0;
+    font-size: 12px;
+    color: #3399FF;
+    transition: 0.3s;
 }
