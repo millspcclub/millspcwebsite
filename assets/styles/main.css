@@ -1,3 +1,10 @@
+/** 
+    CSS for PC Club Website
+    Form Animation by Takuma.I
+    Button Animation also by some guy from Code Pen
+**/
+
+/* Universal Properties */
 body {
     background: white;
     font-family: 'Fira Code', monospace;
@@ -5,29 +12,16 @@ body {
     position: relative;
 }
 
+/* lazy styles */
 .bold {
     font-weight: bold;
 }
 
-
-.intro {
-    background: white;
-    display: flex;
+.center {
     text-align: center;
-    align-items: center;
-    justify-content: center;
-    padding: 50px;
 }
 
-.intro {
-    height: 99vh;
-}
-
-@media only screen and (max-width: 600px) {
-    .intro {
-        height: 87vh;
-    }
-}
+/* Text Styles */
 
 .title {
     font-size: 50px;
@@ -35,24 +29,18 @@ body {
     color: #000000;
 }
 
-.small_subtitle{
-  font-size: 18px;
-  color: #727272;
-  margin-bottom: 20px;
-}
-
-.submit_info_text{
-  font-size: 15px;
-  color: #727272;
-  margin-bottom: 15px;
-  font-weight: bold;``
-}
-
 .subtitle {
-    font-size: 22px;
     color: #727272;
     margin-bottom: 30px;
 }
+
+.small_subtitle {
+    font-size: 18px;
+    color: #727272;
+    margin-bottom: 20px;
+}
+
+/* Icons */
 
 .camerathing {
     position: absolute;
@@ -60,32 +48,44 @@ body {
     right: 25px;
 }
 
-#announcements {
+.icons {
+    width: 30px;
+    border: 0;
+}
+
+/* <a href> links */
+
+a:link,
+a:visited {
+    text-decoration: none;
+    color: rgba(43, 179, 255, 0.8)
+}
+
+a:link:hover,
+a:visited:hover {
+    color: rgba(43, 179, 255, 0.61)
+}
+
+/* Sections (blocks) spacing and style */
+/* irst white block */
+.intro {
+    background: white;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Black box (generally used for smaller things) */
+.subsection {
     color: white;
     text-align: center;
     background: black;
     padding: 50px;
 }
 
-.icons {
-    width: 30px;
-    border: 0;
-}
-
-.discord-widget /*For the stupid discord widget that won't behave*/
-{
-    float: right;
-}
-
-a:link,a:visited {
-    text-decoration: none;
-    color: rgba(43, 179, 255, 0.8)
-}
-
-a:link:hover,a:visited:hover {
-    color: rgba(43, 179, 255, 0.61)
-}
-
+/* Main section for main content */
 .section {
     background: #191919;
 }
@@ -98,13 +98,15 @@ a:link:hover,a:visited:hover {
     max-width: 1000px;
 }
 
-.main-content > div > p {
+.main-content>div>p {
     line-height: 1.4;
 }
 
-.main-content > div > ul {
+.main-content>div>ul {
     line-height: 1.4;
 }
+
+/* Button Design | Animation */
 
 .btn {
     margin: 0 auto;
@@ -169,12 +171,16 @@ a:link:hover,a:visited:hover {
     transform: scale(0.1, 1);
 }
 
+/* Credits */
+
 .footer {
     padding: 5vh 20px 20px;
     margin: 0 auto;
     max-width: 1000px;
 }
 
-.stuff {
+.credits {
     font-size: 12px;
 }
+
+/* Input Fields Style | Animation */
