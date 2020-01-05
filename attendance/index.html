@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- Marked up some things for you to remember -->
+
+<html>
+	<!-- Heading is self explanatory -->
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<meta content="wbXWDzrlGPDYe5i5khulZPNR__f6cjYzZqVr5P0l81g" name="google-site-verification" />
+		<!-- Apple | Mobile Safari Compatibility -->
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<!-- Responsive Design -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Icons -->
+		<link href="../assets/images/logo.png" rel="icon" type="x-icon" />
+		<link href="../assets/images/logo.png" rel="shortcut icon" type="x-icon" />
+		<link href="../assets/images/logo.png" rel="apple-touch-icon" sizes="128x128">
+		<!-- Font and CSS Sheet -->
+		<link href="https://fonts.googleapis.com/css?family=Fira+Code:400,600&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../assets/styles/main.css">
+		<link rel="stylesheet" type="text/css" href="../assets/styles/set1.css">
+		<link rel="stylesheet" type="text/css" href="../assets/styles/normalize.css">
+		<!-- This is very important -->
+		<title>Attendance | Mills PC Club</title>
+	</head>
+
+	<!-- Always have a body -->
+	<body>
+		<!-- Instagram icon goes here -->
+		<a class="camerathing" href="https://instagram.com/millspc.club/">
+			<img class="icons" src="../assets/images/ig.png" alt="" />
+		</a>
+		<!-- Wrap everything else in a container for margins -->
+		<div class="container">
+			<!-- Everything should fit in intro (first white block) -->
+			<div class="intro">
+				<!-- Another div (sorry) to group all intro items -->
+				<div>
+					<!-- Flipping the tags is an easy fix of color bug-->
+					<a href="../"><h1 class="title">sign-in.club</h1></a>
+					<p class="small_subtitle bold" style="margin-bottom: 5vh">
+						Hello members! Please provide your name and email.
+					</p>
+					<!-- A few things i changed there:
+						1) Use placeholder
+						2) Never use tags that can be used as css (font, center)
+						3) Try to use p tags and h tags instead of making your own class 
+						5) You don't need to end input tags
+						4) Is it legal to format like this?
+					-->
+					<form action="attendance/attendance.php" method="post">
+						<span class="input input--minoru">
+							<input required class="input__field input__field--minoru" type="text" id="input-name" placeholder="Full Name" name="name" onkeydown="return (event.keyCode!=188);">
+							<label class="input__label input__label--minoru" for="input-name"/>
+						</span>
+						<span class="input input--minoru">
+							<input required class="input__field input__field--minoru" type="email" id="input-email" placeholder="Email" name="email"/>
+							<label class="input__label input__label--minoru" for="input-email"/>
+						</span>
+						<br>
+						<input type="submit" value="Submit" class="submit_info_text">
+					</form>
+				</div>
+			</div>
+			<div style="background: #fff;">
+                <div class="footer">
+                    <h2 style="text-align: center">Credits</h2>
+                    <div class="credits">
+                        <div>
+                            <p>Devs: Curtis and Nathan</p>
+                            <hr style="color: whitesmoke; border: none; border-bottom: 1px solid #1f1209;">
+                            <p>Official Website of Mill's PC Club (https://millspc.ddns.net/)</p>
+                            <p>Anything else is fake--avoid it!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+	</body>
+</html>

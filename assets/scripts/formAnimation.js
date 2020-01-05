@@ -1,5 +1,5 @@
 // JavaScript for label effects only
-$(window).load(function(){
+$(window).on("load", function(){
 	$(".col-3 input").val("");
 	
 	$(".input-effect input").focusout(function(){
