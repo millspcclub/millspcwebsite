@@ -1,20 +1,50 @@
 <html style='background: rgba(0,0,0,0)'>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js" integrity="sha512-YSdqvJoZr83hj76AIVdOcvLWYMWzy6sJyIMic2aQz5kh2bPTd9dzY3NtdeEAzPp/PhgZqr4aJObB3ym/vsItMg==" crossorigin="anonymous"></script>
     <style>
         a {
-            font-family: Roboto;
+            color: #c155ffcc;
             text-decoration: none;
-            color: white;
-            padding: 5px 10px;
-            background: #777777;
-            border-radius: 15px;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+            overflow: hidden;
+            background: #fff;
+            display: flex;
+            width: 100%;
+        }
+        
+        .main-link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        
+        .main-link>span {
+            margin-right: 10px;
+            transition: all .15s ease-out;
+        }
+        
+        .main-link:hover span:first-child {
+            margin-right: 15px;
         }
     </style>
 </head>
 
 <body>
-    <a target='_top' href='https://pcclub.now.sh'>Go Back</a>
+    <a class="main-link" target='_top' href='https://pcclub.now.sh'>
+        <span><svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="chevron-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="svg-inline--fa fa-chevron-left fa-w-10 fa-1x"><g class="fa-group"><path fill="currentColor" d="M285.59 410.4a23.93 23.93 0 0 1 0 33.84l-22.7 22.65a24 24 0 0 1-33.94 0l-154.31-154L131.42 256z" class="fa-secondary"></path><path fill="currentColor" d="M262.85 45.06l22.7 22.65a23.93 23.93 0 0 1 0 33.84L74.58 312.9l-40-40a23.94 23.94 0 0 1 0-33.84l194.33-194a24 24 0 0 1 33.94 0z" class="fa-primary"></path></g></svg></span>
+        <span>Go Back</span>
+    </a>
+    <span style="flex-grow: 1"></span>
 </body>
 
 </html>

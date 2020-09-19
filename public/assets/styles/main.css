@@ -20,7 +20,9 @@ a {
     color: #2bb3ffcc;
 }
 
-p {
+p,
+li {
+    opacity: .8;
     font-size: 18px;
 }
 
@@ -46,6 +48,20 @@ hr {
 
 img {
     -webkit-user-drag: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 1em;
+}
+
+ul li::before {
+    content: ".\2022 ";
+    color: #2bb3ffcc;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
 }
 
 
@@ -140,6 +156,11 @@ nav>span {
     -webkit-user-drag: none;
 }
 
+#annoucements img {
+    width: 80%;
+    border-radius: 10px;
+}
+
 
 /* Black box (generally used for smaller things) */
 
@@ -188,12 +209,13 @@ nav>span {
 }
 
 .main-content {
+    min-height: 600px;
     max-width: 1380px;
     margin: 0 auto;
     padding: 40px 40px;
     line-height: 1.5;
     color: #fff;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .main-content>div>p {
@@ -218,6 +240,16 @@ nav>span {
 
 .main-link>span {
     margin-right: 10px;
+    transition: all .15s ease-out;
+}
+
+.main-link.small {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.main-link:hover span:first-child {
+    margin-right: 15px;
 }
 
 .btn {
