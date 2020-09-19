@@ -24,11 +24,13 @@ p,
 li {
     opacity: .8;
     font-size: 18px;
+    transition: all .4s ease-out;
 }
 
 h1 {
     margin: 0;
     font-size: 48px;
+    transition: all .4s ease-out;
 }
 
 h2 {
@@ -240,7 +242,7 @@ nav>span {
 
 .main-link>span {
     margin-right: 10px;
-    transition: all .15s ease-out;
+    transition: all .2s ease-out;
 }
 
 .main-link.small {
