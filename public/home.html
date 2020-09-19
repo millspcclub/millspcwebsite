@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
 
-    <link rel="shortcut icon" href="http://example.com/myicon.ico" />
+    <link rel="shortcut icon" href="/assets/images/logo.png" />
     <link rel="apple-touch-icon" sizes="128x128" href="/assets/images/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/3.0.0-beta.6/aos.css" integrity="sha256-hpX1/GTWVZP5djpbKNFLw048+AIxfh/60hJafI/t+v4=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" />
@@ -110,30 +110,10 @@
         })()
     </script>
     <script>
-        // Join Me JS
-        (function() {
-            var qs, js, q, s, d = document,
-                gi = d.getElementById,
-                ce = d.createElement,
-                gt = d.getElementsByTagName,
-                id = "typef_orm_share",
-                b = "https://embed.typeform.com/";
-            if (!gi.call(d, id)) {
-                js = ce.call(d, "script");
-                js.id = id;
-                js.src = b + "embed.js";
-                q = gt.call(d, "script")[0];
-                q.parentNode.insertBefore(js, q)
-            }
-        })()
-    </script>
-    <script>
         AOS.init({
             duration: 1000,
             easing: "easeInOutQuint",
         });
-
-
 
         fetch("https://potion-api.now.sh/html/?id=84314c561c734b199feaff2accff80dd")
             .then(response => response.text())
