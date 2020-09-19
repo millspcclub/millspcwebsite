@@ -2,3 +2,5 @@
 .idea
 .git
 .dream
+node_modules
+.vercel

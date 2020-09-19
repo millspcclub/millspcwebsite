@@ -1,0 +1,28 @@
+{
+  "name": "millspcwebsite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thelolguy1/millspcwebsite.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Thelolguy1/millspcwebsite/issues"
+  },
+  "homepage": "https://github.com/Thelolguy1/millspcwebsite#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-static": "^1.2.6",
+    "node-fetch": "^2.6.1",
+    "puppeteer": "^5.3.0"
+  }
+}
