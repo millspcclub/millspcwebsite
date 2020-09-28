@@ -186,7 +186,7 @@ nav>span {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 40px 40px;
+    padding: 10vw;
     overflow-x: hidden;
     color: #fff;
 }
@@ -212,7 +212,7 @@ nav>span {
     min-height: 600px;
     max-width: 1380px;
     margin: 0 auto;
-    padding: 40px 40px;
+    padding: 5vw;
     line-height: 1.5;
     color: #fff;
     overflow: hidden;
