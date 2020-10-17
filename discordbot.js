@@ -25,6 +25,11 @@ bot.on("message", msg => {
                     startGame(message)
                 });
             break;
+        case "pclists":
+            msg.channel.send("Comming soon...")
+                .then(message => {
+                    message.react("😎")
+                });
     }
 });
 
