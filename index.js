@@ -24,7 +24,3 @@ app.get("*", (req, res) => {
 
 app.listen(100)
 module.exports = app;
-
-// Discord Bot
-
-const botInstance = require("./discordbot.js");

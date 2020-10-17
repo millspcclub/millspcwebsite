@@ -25,7 +25,8 @@ bot.on("message", msg => {
                     startGame(message)
                 });
             break;
-        case "pclists":
+        case "lists":
+        case "list":
             msg.channel.send("Comming soon...")
                 .then(message => {
                     message.react("😎")
