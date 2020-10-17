@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Thelolguy1/millspcwebsite#readme",
   "dependencies": {
+    "discord.js": "^12.3.1",
     "express": "^4.17.1",
     "express-static": "^1.2.6",
     "node-fetch": "^2.6.1",

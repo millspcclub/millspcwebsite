@@ -1,0 +1,33 @@
+{
+    "lists": [{
+            "featured": true,
+            "type": 0,
+            "name": "Cheap Starter",
+            "price": 500,
+            "cpu": "Ryzen 3 3100",
+            "ram": 8,
+            "gpu": "NVIDIA RTX 2080Ti",
+            "relURL": "/list/fwFrHz"
+        },
+        {
+            "featured": true,
+            "type": 1,
+            "name": "Good Frames",
+            "price": 900,
+            "cpu": "Ryzen 5 3600X",
+            "ram": 16,
+            "gpu": "NVIDIA GTX 1660 super",
+            "relURL": "/list/fwFrHz"
+        },
+        {
+            "featured": true,
+            "type": 2,
+            "name": "Rip Wallet",
+            "price": 1600,
+            "cpu": "Ryzen 5 3600X",
+            "ram": 16,
+            "gpu": "NVIDIA GTX 1660 super",
+            "relURL": "/list/fwFrHz"
+        }
+    ]
+}

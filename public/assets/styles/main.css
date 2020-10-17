@@ -1,11 +1,19 @@
 /** 
     CSS for PC Club Website
-    Form Animation by Takuma.I
-    Button Animation also by some guy from Code Pen
 **/
 
 
 /* Universal Properties */
+
+::-moz-selection {
+    color: white;
+    background: #2bb3ffcc;
+}
+
+ ::selection {
+    color: white;
+    background: #2bb3ffcc;
+}
 
 body {
     position: relative;
@@ -51,17 +59,17 @@ img {
 }
 
 ul {
-    list-style: none;
     margin: 0;
+    list-style: none;
     padding-left: 1em;
 }
 
 ul li::before {
+    display: inline-block;
+    width: 1em;
     content: ".\2022 ";
     color: #2bb3ffcc;
     font-weight: bold;
-    display: inline-block;
-    width: 1em;
 }
 
 
@@ -156,9 +164,17 @@ nav>span {
     -webkit-user-drag: none;
 }
 
+#annoucements {
+    text-align: center;
+}
+
 #annoucements img {
     width: 80%;
     border-radius: 10px;
+}
+
+#information {
+    text-align: initial;
 }
 
 
@@ -167,17 +183,33 @@ nav>span {
 .subsection {
     padding: 50px;
     color: white;
-    text-align: center;
     background: black;
 }
 
 
 /* Main section for main content */
 
+.space {
+    display: block;
+    height: 100px;
+    background: transparent;
+}
+
 .section {
     display: flex;
+    position: relative;
     justify-content: center;
     background: #191919;
+    color: #fff;
+}
+
+.section.light {
+    background: #f7f7f7;
+    color: #191919;
+}
+
+.section.black {
+    background: #000;
 }
 
 .split-content {
@@ -188,7 +220,6 @@ nav>span {
     align-items: center;
     padding: 10vw;
     overflow-x: hidden;
-    color: #fff;
 }
 
 .split-content>div.left {
@@ -196,10 +227,10 @@ nav>span {
 }
 
 .split-content>div {
-    flex-wrap: 1;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    flex-wrap: 1;
 }
 
 .split-content img {
@@ -209,13 +240,18 @@ nav>span {
 }
 
 .main-content {
-    min-height: 600px;
+    width: 100%;
     max-width: 1380px;
+    min-height: 600px;
     margin: 0 auto;
     padding: 5vw;
     line-height: 1.5;
-    color: #fff;
     overflow: hidden;
+}
+
+.main-content.bigger {
+    max-width: 1500px;
+    padding: 0;
 }
 
 .main-content>div>p {
@@ -244,8 +280,8 @@ nav>span {
 }
 
 .main-link.small {
-    font-size: 20px;
     margin: 10px 0;
+    font-size: 20px;
 }
 
 .main-link:hover span:first-child {
@@ -333,6 +369,58 @@ nav>span {
     font-size: 12px;
 }
 
+
+/* Cards */
+
+.grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+card {
+    display: inline-flex;
+    width: calc(100vw - 30px);
+    max-width: calc(1320px / 3);
+    height: 500px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 30px 40px;
+    transition: all .5s ease-out;
+}
+
+card:hover {
+    transform: translateY(-15px);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 30px 60px;
+    transition: all .2s ease-out;
+}
+
+card.small {
+    width: calc(100vw - 30px);
+    max-width: 400px;
+    height: 300px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 10px 20px;
+}
+
+
+/* Card Components */
+
+card>h3 {
+    margin: 10px 0;
+}
+
+.price {
+    display: inline-block;
+    padding: 2px 8px;
+    font-size: 16px;
+    font-weight: 600;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
 @media all and (min-width: 700px) {
     h1 {
         font-size: 65px;
@@ -358,8 +446,8 @@ nav>span {
         flex-direction: column;
     }
     .split-content>div {
-        text-align: center;
         align-items: center !important;
+        text-align: center;
     }
     .split-content img {
         margin: 0;
