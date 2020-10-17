@@ -195,6 +195,10 @@ nav>span {
     background: transparent;
 }
 
+.spaced {
+    margin: 50px 0;
+}
+
 .section {
     display: flex;
     position: relative;
@@ -409,13 +413,14 @@ card.small {
 /* Card Components */
 
 card>h3 {
+    font-size: 30px !important;
     margin: 10px 0;
 }
 
 .price {
     display: inline-block;
     padding: 2px 8px;
-    font-size: 16px;
+    font-size: 16px !important;
     font-weight: 600;
     background: rgba(0, 0, 0, 0.1);
     border-radius: 20px;
