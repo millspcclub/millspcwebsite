@@ -2,22 +2,22 @@
     "lists": [{
             "featured": true,
             "type": 0,
-            "name": "Cheap Starter",
-            "price": 500,
+            "name": "Budget Gaming",
+            "price": 550,
             "cpu": "Ryzen 3 3100",
             "ram": 8,
             "gpu": "NVIDIA RTX 2080Ti",
-            "relURL": "/list/fwFrHz"
+            "relURL": "/list/K9Fbj2"
         },
         {
             "featured": true,
             "type": 1,
             "name": "Good Frames",
-            "price": 900,
+            "price": 765,
             "cpu": "Ryzen 5 3600X",
             "ram": 16,
             "gpu": "NVIDIA GTX 1660 super",
-            "relURL": "/list/fwFrHz"
+            "relURL": "/list/XhtD4d"
         },
         {
             "featured": true,
@@ -27,7 +27,7 @@
             "cpu": "Ryzen 5 3600X",
             "ram": 16,
             "gpu": "NVIDIA GTX 1660 super",
-            "relURL": "/list/fwFrHz"
+            "relURL": "/list/GjhFdD"
         }
     ]
 }
