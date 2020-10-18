@@ -1,3 +1,4 @@
+const fs = require('fs');
 const Discord = require("discord.js");
 const bot = new Discord.Client();
 
@@ -27,7 +28,8 @@ bot.on("message", msg => {
             break;
         case "lists":
         case "list":
-            msg.channel.send("Comming soon...")
+            parts = getPartLists();
+            msg.channel.send(partsListString(parts))
                 .then(message => {
                     message.react("😎")
                 });
@@ -36,6 +38,20 @@ bot.on("message", msg => {
 
 // PC LIST THINGS
 
+function getPartLists() {
+    let raw = fs.readFileSync("bot/student.json");
+    let parts = JSON.parse(raw);
+}
+
+function partsListString(parts) {
+    var output = "**PART LISTS**";
+
+    for (const list in parts.list) {
+        output += `\n${list.name} - $${list.price}`
+    }
+
+    return output;
+}
 
 // EMOJI THINGS
 
