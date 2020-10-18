@@ -39,7 +39,7 @@ bot.on("message", msg => {
 // PC LIST THINGS
 
 function getPartLists() {
-    let raw = fs.readFileSync("bot/student.json");
+    let raw = fs.readFileSync("clubdata/partlists.json");
     let parts = JSON.parse(raw);
 }
 
