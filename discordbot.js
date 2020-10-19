@@ -32,6 +32,7 @@ bot.on("message", msg => {
         case "help":
 
             msg.channel.send("");
+            break;
 
         case "start":
 
@@ -39,6 +40,44 @@ bot.on("message", msg => {
                 .then(message => {
                     startGame(message)
                 });
+            break;
+
+        case "calc":
+
+            if (args.length == 1) {
+                msg.channel.send("**INSTRUCTIONS**\n```pc-calc [expression]```");
+                break;
+            }
+
+            let equation = args;
+            equation.shift();
+            equation = equation.join(" ")
+            equation = equation
+                .replace(/--/g, " - -")
+                .replace(/,/g, "")
+                .replace(/\[/g, "(")
+                .replace(/\]/g, ")")
+
+            try {
+                let someError = false;
+
+                for (const letter of equation.replace(" ", "")) {
+                    if (!(".1234567890+-*/%() ".split("").includes(letter))) {
+                        someError = true;
+                        break;
+                    }
+                }
+
+                if (someError) {
+                    msg.channel.send("❌ Accepted Chars: `1234567890+-*/%()`")
+                } else {
+                    answer = eval(equation);
+                    msg.channel.send(`🧠 => ${answer}`);
+                }
+            } catch (error) {
+                msg.channel.send(`Invalid Expression:\n\`\`\`${error}\`\`\``);
+            }
+
             break;
 
         case "lists":
@@ -73,6 +112,8 @@ bot.on("message", msg => {
                         message.react("❌");
                     });
                 });
+
+            break;
     }
 });
 
