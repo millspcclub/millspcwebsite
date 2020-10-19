@@ -5,6 +5,15 @@ const bot = new Discord.Client();
 const { Message } = require("discord.js");
 const { prefix, token } = require("./bot/bot-config.json");
 
+bot.user.setPresence({
+    status: 'online',
+    activity: {
+        name: 'with new hardware',
+        type: 'PLAYING',
+        url: 'https://pcclub.now.sh'
+    }
+})
+
 bot.on("ready", () => {
     console.log("[✔]: Poggers! We are running!");
 });
@@ -48,7 +57,7 @@ bot.on("message", msg => {
 
                     collector.on("collect", (reaction, user) => {
                         const n = reverseNums[reaction.emoji.name] - 1;
-                        message.channel.send(`\n**Enjoy List#${n + 1}!** ☕ ~ <https://pcpartpicker.com${parts.lists[n].relURL}>`)
+                        message.channel.send(`\n**Enjoy \`list#${n + 1}! \`** ~ <https://pcpartpicker.com${parts.lists[n].relURL}>`)
                     })
 
                     collector.on("end", collected => {
@@ -59,25 +68,7 @@ bot.on("message", msg => {
                         )
 
                         message.react("❌");
-                    })
-
-                    // message.awaitReactions(filter, {
-                    //         max: 1,
-                    //         time: 30 * 1000,
-                    //         error: ["time"]
-                    //     }).then(collected => {
-
-                    //         const reaction = collected.first();
-
-                    //         if (typeof reaction != "undefined") {
-                    //             const n = reverseNums[reaction.emoji.name] - 1;
-                    //             message.channel.send(`\n**Enjoy!** ☕ ~ <https://pcpartpicker.com${parts.lists[n].relURL}>`)
-                    //         }
-
-                    //     })
-                    //     .catch(collected => {
-                    //         return message.channel.send(`Closed.`);
-                    //     });
+                    });
                 });
     }
 });
