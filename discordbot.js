@@ -53,11 +53,13 @@ bot.on("message", msg => {
             equation.shift();
             equation = equation.join(" ")
             equation = equation
+                .replace(/\n/g, "")
                 .replace(/`/g, "")
                 .replace(/--/g, " - -")
                 .replace(/,/g, "")
                 .replace(/\[/g, "(")
                 .replace(/\]/g, ")")
+            console.log(equation)
 
             try {
                 let someError = false;
