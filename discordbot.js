@@ -29,6 +29,10 @@ bot.on("message", msg => {
     const args = msg.content.substring(prefix.length).split(" ");
 
     switch (args[0]) {
+        case "help":
+
+            msg.channel.send("");
+
         case "start":
 
             msg.channel.send("\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n@here - 🏁 Game started!\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬")
@@ -51,8 +55,7 @@ bot.on("message", msg => {
                     reactNum(text[1], message)
 
                     const collector = message.createReactionCollector(filter, {
-                        //time: 24 * 60 * 60 * 1000
-                        time: 1000 * 5
+                        time: 24 * 60 * 60 * 1000
                     })
 
                     collector.on("collect", (reaction, user) => {
