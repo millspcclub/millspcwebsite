@@ -53,6 +53,7 @@ bot.on("message", msg => {
             equation.shift();
             equation = equation.join(" ")
             equation = equation
+                .replace(/`/g, "")
                 .replace(/--/g, " - -")
                 .replace(/,/g, "")
                 .replace(/\[/g, "(")
@@ -85,6 +86,7 @@ bot.on("message", msg => {
 
             parts = getPartLists();
             text = partsListString(parts);
+            Z
 
             const filter = (reaction, user) => ['0⃣', '1⃣', '2⃣', '3⃣', '4⃣', '5⃣', '6⃣', '7⃣', '8⃣', '9⃣', '🔟'].includes(reaction.emoji.name) && user.id === msg.author.id;
 
