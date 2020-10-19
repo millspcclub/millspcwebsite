@@ -60,7 +60,7 @@ bot.on("message", msg => {
 
                     collector.on("collect", (reaction, user) => {
                         const n = reverseNums[reaction.emoji.name] - 1;
-                        message.channel.send(`\n**Enjoy \`list#${n + 1}! \`** ~ <https://pcpartpicker.com${parts.lists[n].relURL}>`)
+                        message.channel.send(`\n**Enjoy \`☕ list#${n + 1}!\`** ~ <https://pcpartpicker.com${parts.lists[n].relURL}>`)
                     })
 
                     collector.on("end", collected => {
