@@ -41,23 +41,43 @@ bot.on("message", msg => {
 
                     reactNum(text[1], message)
 
-                    message.awaitReactions(filter, {
-                            max: 1,
-                            time: 30 * 1000,
-                            error: ["time"]
-                        }).then(collected => {
+                    const collector = message.createReactionCollector(filter, {
+                        //time: 24 * 60 * 60 * 1000
+                        time: 1000 * 5
+                    })
 
-                            const reaction = collected.first();
+                    collector.on("collect", (reaction, user) => {
+                        const n = reverseNums[reaction.emoji.name] - 1;
+                        message.channel.send(`\n**Enjoy List#${n + 1}!** ☕ ~ <https://pcpartpicker.com${parts.lists[n].relURL}>`)
+                    })
 
-                            if (typeof reaction != "undefined") {
-                                const n = reverseNums[reaction.emoji.name] - 1;
-                                message.channel.send(`\n**Enjoy!** ☕ ~ <https://pcpartpicker.com${parts.lists[n].relURL}>`)
-                            }
+                    collector.on("end", collected => {
+                        message.edit(
+                            message.content
+                            .replace("PART LISTS", "~~PART LISTS~~ (Expired)")
+                            .replace("Choose *any* of the following:", "~~Choose *any* of the following:~~ (Expired)")
+                        )
 
-                        })
-                        .catch(collected => {
-                            return message.channel.send(`Closed.`);
-                        });
+                        message.react("❌");
+                    })
+
+                    // message.awaitReactions(filter, {
+                    //         max: 1,
+                    //         time: 30 * 1000,
+                    //         error: ["time"]
+                    //     }).then(collected => {
+
+                    //         const reaction = collected.first();
+
+                    //         if (typeof reaction != "undefined") {
+                    //             const n = reverseNums[reaction.emoji.name] - 1;
+                    //             message.channel.send(`\n**Enjoy!** ☕ ~ <https://pcpartpicker.com${parts.lists[n].relURL}>`)
+                    //         }
+
+                    //     })
+                    //     .catch(collected => {
+                    //         return message.channel.send(`Closed.`);
+                    //     });
                 });
     }
 });
