@@ -86,7 +86,7 @@ bot.on("message", msg => {
             parts = getPartLists();
             text = partsListString(parts);
 
-            const filter = (reaction, user) => [emojisChars[1], emojisChars[2], emojisChars[3]].includes(reaction.emoji.name) && user.id === msg.author.id;
+            const filter = (reaction, user) => ['0⃣', '1⃣', '2⃣', '3⃣', '4⃣', '5⃣', '6⃣', '7⃣', '8⃣', '9⃣', '🔟'].includes(reaction.emoji.name) && user.id === msg.author.id;
 
             msg.channel.send(text[0])
                 .then(async message => {
