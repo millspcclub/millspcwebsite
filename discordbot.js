@@ -5,16 +5,16 @@ const bot = new Discord.Client();
 const { Message } = require("discord.js");
 const { prefix, token } = require("./bot/bot-config.json");
 
-bot.user.setPresence({
-    status: 'online',
-    activity: {
-        name: 'with new hardware',
-        type: 'PLAYING',
-        url: 'https://pcclub.now.sh'
-    }
-})
-
 bot.on("ready", () => {
+    bot.user.setPresence({
+        status: 'online',
+        activity: {
+            name: 'with new hardware',
+            type: 'PLAYING',
+            url: 'https://pcclub.now.sh'
+        }
+    })
+
     console.log("[✔]: Poggers! We are running!");
 });
 
