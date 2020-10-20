@@ -1,5 +1,5 @@
 const fs = require('fs');
-const Discord = require("discord.js-selfbot");
+const Discord = require("discord.js");
 const bot = new Discord.Client();
 
 const { prefix, token } = require("./bot/bot-config.json");
