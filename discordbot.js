@@ -1,17 +1,18 @@
 const fs = require('fs');
-const Discord = require("discord.js");
+const Discord = require("discord.js-selfbot");
 const bot = new Discord.Client();
 
-const { Message } = require("discord.js");
 const { prefix, token } = require("./bot/bot-config.json");
+
+// CONFIGS
+var botting = token.startsWith("mfa.");
 
 bot.on("ready", () => {
     bot.user.setPresence({
         status: 'online',
         activity: {
-            name: 'with new hardware',
-            type: 'PLAYING',
-            url: 'https://pcclub.now.sh'
+            name: 'with hardware | pc-help',
+            type: 'PLAYING'
         }
     })
 
@@ -30,8 +31,66 @@ bot.on("message", msg => {
 
     switch (args[0]) {
         case "help":
+            const docs = {
+                help: {
+                    name: "pc-help",
+                    value: "Find out more about the bot + commands\n```pc-help [command]```",
+                    inline: true
+                },
+                calc: {
+                    name: "pc-calc",
+                    value: "Simple calculator\n```pc-calc [expression]```",
+                    inline: true
+                }
+            }
 
-            msg.channel.send("");
+            const help = {
+                color: "#0099ff",
+                title: 'PC CLUB BOT',
+                url: 'https://pcclub.now.sh/',
+                author: {
+                    icon_url: 'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/24b0f5b1-603f-4c6e-9c22-c039dd69ea75/PC_Club_Logo_%282%29.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20201020%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20201020T081240Z&X-Amz-Expires=86400&X-Amz-Signature=0cd47b0add89c409ec1d839a92616c358bc65138a8323dd736f15938724b2220&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22PC_Club_Logo_%282%29.png%22',
+                },
+                description: '**BOT COMMANDS:**',
+                fields: [Object.values(docs)],
+                timestamp: new Date(),
+                footer: {
+                    text: 'Train the mind. Power the future.',
+                    icon_url: 'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/24b0f5b1-603f-4c6e-9c22-c039dd69ea75/PC_Club_Logo_%282%29.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20201020%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20201020T081240Z&X-Amz-Expires=86400&X-Amz-Signature=0cd47b0add89c409ec1d839a92616c358bc65138a8323dd736f15938724b2220&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22PC_Club_Logo_%282%29.png%22',
+                },
+            };
+
+            if (args.length == 1) {
+                msg.channel.send({ embed: help });
+            } else if (args.length >= 2) {
+
+                let selected = docs[args[1].toLowerCase()];
+
+                if (typeof selected == "undefined")
+                    selected = {
+                        name: "Couldn't find what you're looking for.",
+                        value: "For the full list of commands, type:\n```pc-help [command]```"
+                    }
+
+                const selectiveDocs = {
+                    color: "#474747",
+                    title: 'PC CLUB BOT',
+                    url: 'https://pcclub.now.sh/',
+                    author: {
+                        icon_url: 'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/24b0f5b1-603f-4c6e-9c22-c039dd69ea75/PC_Club_Logo_%282%29.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20201020%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20201020T081240Z&X-Amz-Expires=86400&X-Amz-Signature=0cd47b0add89c409ec1d839a92616c358bc65138a8323dd736f15938724b2220&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22PC_Club_Logo_%282%29.png%22',
+                    },
+                    description: `**❌ ERROR**`,
+                    timestamp: new Date(),
+                    fields: [selected],
+                    footer: {
+                        text: 'Train the mind. Power the future.',
+                        icon_url: 'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/24b0f5b1-603f-4c6e-9c22-c039dd69ea75/PC_Club_Logo_%282%29.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20201020%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20201020T081240Z&X-Amz-Expires=86400&X-Amz-Signature=0cd47b0add89c409ec1d839a92616c358bc65138a8323dd736f15938724b2220&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22PC_Club_Logo_%282%29.png%22',
+                    },
+                }
+
+                msg.channel.send({ embed: selectiveDocs });
+            }
+
             break;
 
         case "start":
@@ -59,7 +118,6 @@ bot.on("message", msg => {
                 .replace(/,/g, "")
                 .replace(/\[/g, "(")
                 .replace(/\]/g, ")")
-            console.log(equation)
 
             try {
                 let someError = false;
@@ -88,7 +146,6 @@ bot.on("message", msg => {
 
             parts = getPartLists();
             text = partsListString(parts);
-            Z
 
             const filter = (reaction, user) => ['0⃣', '1⃣', '2⃣', '3⃣', '4⃣', '5⃣', '6⃣', '7⃣', '8⃣', '9⃣', '🔟'].includes(reaction.emoji.name) && user.id === msg.author.id;
 
@@ -119,6 +176,21 @@ bot.on("message", msg => {
 
             break;
     }
+
+    // Botting Functionality
+    if (botting && msg.channel.id == "766151773458661418" && msg.embeds.length > 0) {
+        if (msg.embeds[0].description.includes("h!treat")) {
+            setTimeout(function() {
+                msg.channel.send("h!treat");
+            }, bottingTimeout);
+        } else if (msg.embeds[0].description.includes("h!trick")) {
+            setTimeout(function() {
+                msg.channel.send("h!trick");
+                count++;
+            }, bottingTimeout);
+        }
+    }
+
 });
 
 // PC LIST THINGS
@@ -226,7 +298,3 @@ async function startGame(message) {
 }
 
 bot.login(token);
-
-module.exports = {
-    init: bot.login(token)
-}
