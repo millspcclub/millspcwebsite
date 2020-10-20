@@ -94,6 +94,7 @@ bot.on("message", msg => {
             break;
 
         case "start":
+            break; // disable command
 
             msg.channel.send("\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n@here - 🏁 Game started!\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬")
                 .then(message => {
