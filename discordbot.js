@@ -41,6 +41,11 @@ bot.on("message", msg => {
                     name: "pc-calc",
                     value: "Simple calculator\n```pc-calc [expression]```",
                     inline: true
+                },
+                lists: {
+                    name: "pc-list",
+                    value: "All PC Club build lists can be read\n```pc-list(s)```",
+                    inline: true
                 }
             }
 
