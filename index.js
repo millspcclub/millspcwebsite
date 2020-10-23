@@ -16,6 +16,10 @@ app.get("/data/parts", (req, res) => {
     res.sendFile(__dirname + "/clubdata/partlists.json");
 })
 
+app.get("/sitemap.xml", (req, res) => {
+    res.sendFile(__dirname + "/sitemap.xml");
+});
+
 app.get("*", (req, res) => {
     res.sendFile(__dirname + "/public/404.html");
 })

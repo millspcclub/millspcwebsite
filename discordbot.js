@@ -5,15 +5,11 @@ const fs = require('fs');
 const Discord = require("discord.js");
 const bot = new Discord.Client();
 
-const { prefix, token } = require("./bot/bot-config.json");
-
+const { prefix } = require("./bot/bot-config.json");
 
 // Importing Commands
 const { commands } = require("./bot/commandsystem.js");
 bot.commands = commands;
-
-// CONFIGS
-var botting = token.startsWith("mfa.");
 
 
 bot.once("ready", () => {
@@ -208,4 +204,6 @@ async function startGame(message) {
     }
 }
 
-bot.login(token);
+// Init dotenv
+require("dotenv").config();
+bot.login(process.env.DISCORD_BOT_TOKEN);

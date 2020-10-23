@@ -4,3 +4,4 @@
 .dream
 node_modules
 .vercel
+.env
