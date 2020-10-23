@@ -1,8 +1,6 @@
 const express = require("express");
 const app = express();
 
-const fetch = require("node-fetch");
-
 app.locals.basedir = __dirname;
 app.use("/assets", express.static(__dirname + "/public/assets"))
 

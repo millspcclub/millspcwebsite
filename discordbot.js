@@ -1,13 +1,22 @@
+// PC CLUB DISCORD BOT
+
+// Modules
 const fs = require('fs');
 const Discord = require("discord.js");
 const bot = new Discord.Client();
 
 const { prefix, token } = require("./bot/bot-config.json");
 
+
+// Importing Commands
+const { commands } = require("./bot/commandsystem.js");
+bot.commands = commands;
+
 // CONFIGS
 var botting = token.startsWith("mfa.");
 
-bot.on("ready", () => {
+
+bot.once("ready", () => {
     bot.user.setPresence({
         status: 'online',
         activity: {
@@ -21,81 +30,26 @@ bot.on("ready", () => {
 
 bot.on("message", msg => {
     if (msg.content === "hello") msg.channel.send(`👋 Hello, ${msg.author}`);
-    if (msg.content === "are developers better than designers?") msg.channel.send(`yes.`);
-    if (msg.content === "are designers better than developers?") msg.channel.send(`no.`);
+    if (!msg.content.startsWith(prefix) || msg.author.bot) return;
 
-    if (!msg.content.startsWith(prefix)) return;
-    if (msg.author.bot) return;
 
-    const args = msg.content.substring(prefix.length).split(" ");
+    const args = msg.content.slice(prefix.length).trim().split(/ +/);
+    const command = args.shift().toLocaleLowerCase();
+
+
+    if (!bot.commands.has(command)) return;
+
+    try {
+        if (command === "help") bot.commands.get(command).execute(commands, msg, args);
+        else bot.commands.get(command).execute(msg, args);
+    } catch (error) {
+        msg.reply(`❌ Sorry, something went terribly wrong:\n\`\`\`${error}\`\`\``)
+    }
+    return;
+
 
     switch (args[0]) {
         case "help":
-            const docs = {
-                help: {
-                    name: "pc-help",
-                    value: "Find out more about the bot + commands\n```pc-help [command]```",
-                    inline: true
-                },
-                calc: {
-                    name: "pc-calc",
-                    value: "Simple calculator\n```pc-calc [expression]```",
-                    inline: true
-                },
-                lists: {
-                    name: "pc-list",
-                    value: "All PC Club build lists can be read\n```pc-list(s)```",
-                    inline: true
-                }
-            }
-
-            const help = {
-                color: "#0099ff",
-                title: 'PC CLUB BOT',
-                url: 'https://pcclub.now.sh/',
-                author: {
-                    icon_url: 'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/24b0f5b1-603f-4c6e-9c22-c039dd69ea75/PC_Club_Logo_%282%29.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20201020%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20201020T081240Z&X-Amz-Expires=86400&X-Amz-Signature=0cd47b0add89c409ec1d839a92616c358bc65138a8323dd736f15938724b2220&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22PC_Club_Logo_%282%29.png%22',
-                },
-                description: '**BOT COMMANDS:**',
-                fields: [Object.values(docs)],
-                timestamp: new Date(),
-                footer: {
-                    text: 'Train the mind. Power the future.',
-                    icon_url: 'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/24b0f5b1-603f-4c6e-9c22-c039dd69ea75/PC_Club_Logo_%282%29.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20201020%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20201020T081240Z&X-Amz-Expires=86400&X-Amz-Signature=0cd47b0add89c409ec1d839a92616c358bc65138a8323dd736f15938724b2220&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22PC_Club_Logo_%282%29.png%22',
-                },
-            };
-
-            if (args.length == 1) {
-                msg.channel.send({ embed: help });
-            } else if (args.length >= 2) {
-
-                let selected = docs[args[1].toLowerCase()];
-
-                if (typeof selected == "undefined")
-                    selected = {
-                        name: "Couldn't find what you're looking for.",
-                        value: "For the full list of commands, type:\n```pc-help [command]```"
-                    }
-
-                const selectiveDocs = {
-                    color: "#474747",
-                    title: 'PC CLUB BOT',
-                    url: 'https://pcclub.now.sh/',
-                    author: {
-                        icon_url: 'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/24b0f5b1-603f-4c6e-9c22-c039dd69ea75/PC_Club_Logo_%282%29.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20201020%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20201020T081240Z&X-Amz-Expires=86400&X-Amz-Signature=0cd47b0add89c409ec1d839a92616c358bc65138a8323dd736f15938724b2220&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22PC_Club_Logo_%282%29.png%22',
-                    },
-                    description: `**❌ ERROR**`,
-                    timestamp: new Date(),
-                    fields: [selected],
-                    footer: {
-                        text: 'Train the mind. Power the future.',
-                        icon_url: 'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/24b0f5b1-603f-4c6e-9c22-c039dd69ea75/PC_Club_Logo_%282%29.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20201020%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20201020T081240Z&X-Amz-Expires=86400&X-Amz-Signature=0cd47b0add89c409ec1d839a92616c358bc65138a8323dd736f15938724b2220&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22PC_Club_Logo_%282%29.png%22',
-                    },
-                }
-
-                msg.channel.send({ embed: selectiveDocs });
-            }
-
             break;
 
         case "start":
@@ -106,47 +60,6 @@ bot.on("message", msg => {
                     startGame(message)
                 });
             break;
-
-        case "calc":
-
-            if (args.length == 1) {
-                msg.channel.send("**INSTRUCTIONS**\n```pc-calc [expression]```");
-                break;
-            }
-
-            let equation = args;
-            equation.shift();
-            equation = equation.join(" ")
-            equation = equation
-                .replace(/\n/g, "")
-                .replace(/`/g, "")
-                .replace(/--/g, " - -")
-                .replace(/,/g, "")
-                .replace(/\[/g, "(")
-                .replace(/\]/g, ")")
-
-            try {
-                let someError = false;
-
-                for (const letter of equation.replace(" ", "")) {
-                    if (!(".1234567890+-*/%() ".split("").includes(letter))) {
-                        someError = true;
-                        break;
-                    }
-                }
-
-                if (someError) {
-                    msg.channel.send("❌ Accepted Chars: `1234567890+-*/%()`")
-                } else {
-                    answer = eval(equation);
-                    msg.channel.send(`🧠 => ${answer}`);
-                }
-            } catch (error) {
-                msg.channel.send(`Invalid Expression:\n\`\`\`${error}\`\`\``);
-            }
-
-            break;
-
         case "lists":
         case "list":
 
@@ -283,15 +196,7 @@ function getEmoji(message, name) {
     return message.guild.emojis.cache.find(emoji => emoji.name == name)
 }
 
-async function reactNum(n, message) {
-    try {
-        for (let i = 1; i <= n && i <= 10; i++) {
-            await message.react(emojisChars[i]);
-        }
-    } catch (error) {
-        console.error('One of the emojis failed to react.' + error);
-    }
-}
+
 
 async function startGame(message) {
     try {
