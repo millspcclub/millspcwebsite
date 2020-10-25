@@ -30,14 +30,14 @@
             "relURL": "/list/GjhFdD"
         },
         {
-            "featured": false,
+            "featured": true,
             "type": 2,
             "name": "High Performance",
             "price": 1350,
-            "cpu": "Ryzen 7 2700X",
+            "cpu": "Ryzen 7 3700X",
             "ram": 16,
             "gpu": "NVIDIA GTX 1080 Ti",
-            "relURL": "/list/cVLTHz"
+            "relURL": "/list/HB8FdD"
         }
     ]
 }
