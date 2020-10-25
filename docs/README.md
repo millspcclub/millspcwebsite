@@ -9,3 +9,5 @@ Official PC Club website
 - [x] Style correctly
 - [ ] Robust Attendance System
 - [ ] Easily Maintainable
+- [ ] PC Part List Page
+- [ ] Notion to part list linking2
