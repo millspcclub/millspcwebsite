@@ -223,7 +223,7 @@ nav>span {
     justify-content: center;
     align-items: center;
     padding: 10vw;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .split-content>div.left {
@@ -382,6 +382,10 @@ nav>span {
     flex-wrap: wrap;
 }
 
+.card-link {
+    transform-style: preserve-3d;
+}
+
 card {
     display: flex;
     position: relative;
@@ -395,6 +399,7 @@ card {
     background: #fff;
     box-shadow: rgba(0, 0, 0, 0.1) 0 10px 20px;
     border-radius: 20px;
+    transform-style: preserve-3d;
     transition: all .3s ease-out;
 }
 

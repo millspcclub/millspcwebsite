@@ -16,6 +16,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/3.0.0-beta.6/aos.js" integrity="sha256-3R+azxOxLxidpHXg8jx8UFdnhZq2IKrGNpZJdAk8KB0=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js" integrity="sha512-YSdqvJoZr83hj76AIVdOcvLWYMWzy6sJyIMic2aQz5kh2bPTd9dzY3NtdeEAzPp/PhgZqr4aJObB3ym/vsItMg==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.0.2/tilt.jquery.min.js" integrity="sha512-14AZ/DxUrlF26z6v7egDkpJHKyJRn/7ue2BgpWZ/fmqrqVzf4PrQnToy99sHmKwzKev/VZ1tjPxusuTV/n8CcQ==" crossorigin="anonymous"></script>
+    <script src="/assets/scripts/lax.min.js"></script>
     <title>Mills PC Club!</title>
 </head>
 
@@ -74,7 +75,7 @@
         <section class="section">
             <div class="split-content">
                 <!-- Left -->
-                <div class="left" data-delay="500" data-aos="zoom-in">
+                <div class="lax" data-lax-preset="zoomIn" class="left">
                     <h1>Wallpapers</h1>
                     <a href="https://www.notion.so/Hand-Picked-Wallpapers-561b38d105ff496a8fe4626df19aefa8" class="main-link" href="/attendance">
                         <span><svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="images" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-images fa-w-18 fa-1x"><g class="fa-group"><path fill="currentColor" d="M424.49 120.48a12 12 0 0 0-17 0L272 256l-39.51-39.52a12 12 0 0 0-17 0L160 272v48h352V208zM64 336V128H48a48 48 0 0 0-48 48v256a48 48 0 0 0 48 48h384a48 48 0 0 0 48-48v-16H144a80.09 80.09 0 0 1-80-80z" class="fa-secondary"></path><path fill="currentColor" d="M528 32H144a48 48 0 0 0-48 48v256a48 48 0 0 0 48 48h384a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48zM208 80a48 48 0 1 1-48 48 48 48 0 0 1 48-48zm304 240H160v-48l55.52-55.52a12 12 0 0 1 17 0L272 256l135.52-135.52a12 12 0 0 1 17 0L512 208z" class="fa-primary"></path></g></svg></span>
@@ -83,7 +84,7 @@
                 </div>
 
                 <!-- Right -->
-                <div data-delay="500" data-aos="zoom-in">
+                <div class="lax" data-lax-preset="driftLeft">
                     <img src="/assets/images/mockup.png" width="500">
                 </div>
             </div>
@@ -168,7 +169,12 @@
             .then(data => {
                 const iframe = '<iframe style="border: none" src="https://discordapp.com/widget?id=572615653068898305&theme=dark" width="100%" height="600"></iframe>'
                 $("#club-info").html(data + iframe);
+                lax.setup() // init
             })
+
+        window.addEventListener("resize", function() {
+            lax.updateElements()
+        });
     </script>
 </body>
 

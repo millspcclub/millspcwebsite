@@ -68,5 +68,12 @@
                     scale: 1.05
                 });
             }
+
+            const updateLax = () => {
+                lax.update(window.scrollY)
+                window.requestAnimationFrame(updateLax)
+            }
+
+            window.requestAnimationFrame(updateLax)
         })
 }());
