@@ -15,9 +15,7 @@
         "": ""
     }
 
-    //https://raw.githubusercontent.com/millspcclub/millspcwebsite/master/clubdata/partlists.json
-
-    fetch("/data/parts")
+    fetch("https://raw.githubusercontent.com/millspcclub/millspcwebsite/master/clubdata/partlists.json")
         .then(response => response.json())
         .then(data => {
             for (const partlist of data.lists) {
