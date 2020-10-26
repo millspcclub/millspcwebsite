@@ -11,10 +11,6 @@
         "<i style='color: #FF5555' class='fas fa-stack-1x fa-gem'></i>"
     ];
 
-    const rankings = {
-        "": ""
-    }
-
     fetch("https://raw.githubusercontent.com/millspcclub/millspcwebsite/master/clubdata/partlists.json")
         .then(response => response.json())
         .then(data => {
