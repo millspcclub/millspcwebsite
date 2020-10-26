@@ -1,12 +1,26 @@
 {
+    "ratings": {
+        "Ryzen 3 3100": 2,
+        "Ryzen 5 3600X": 3,
+        "Ryzen 7 3700X": 4,
+
+        "NVIDIA GTX 1650 super": 2,
+        "NVIDIA GTX 1660 super": 3,
+        "NVIDIA GTX 1660 Ti": 4,
+        "NVIDIA GTX 1080 Ti": 5,
+        "NVIDIA RTX 2080Ti": 6
+    },
     "lists": [{
             "featured": true,
             "type": 0,
             "name": "Budget Gaming",
             "price": 550,
             "cpu": "Ryzen 3 3100",
-            "ram": 8,
-            "gpu": "NVIDIA RTX 2080Ti",
+            "ram": {
+                "model": "DDR4-3000 CL16 ",
+                "amount": 8
+            },
+            "gpu": "NVIDIA GTX 1650 super",
             "relURL": "/list/K9Fbj2"
         },
         {
@@ -15,8 +29,11 @@
             "name": "Good Frames",
             "price": 765,
             "cpu": "Ryzen 5 3600X",
-            "ram": 16,
-            "gpu": "NVIDIA GTX 1660 super",
+            "ram": {
+                "model": "DDR4-3200 CL16 ",
+                "amount": 16
+            },
+            "gpu": "NVIDIA GTX 1660 Ti",
             "relURL": "/list/XhtD4d"
         },
         {
@@ -25,7 +42,10 @@
             "name": "Rip Wallet",
             "price": 1600,
             "cpu": "Ryzen 5 3600X",
-            "ram": 16,
+            "ram": {
+                "model": "DDR4-3600 CL18 ",
+                "amount": 16
+            },
             "gpu": "NVIDIA GTX 1660 super",
             "relURL": "/list/GjhFdD"
         },
@@ -35,7 +55,10 @@
             "name": "High Performance",
             "price": 1350,
             "cpu": "Ryzen 7 3700X",
-            "ram": 16,
+            "ram": {
+                "model": "DDR4-3200 CL16 ",
+                "amount": 16
+            },
             "gpu": "NVIDIA GTX 1080 Ti",
             "relURL": "/list/HB8FdD"
         }

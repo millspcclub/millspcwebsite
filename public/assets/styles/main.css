@@ -383,23 +383,24 @@ nav>span {
 }
 
 card {
-    display: inline-flex;
+    display: flex;
+    position: relative;
     width: calc(100vw - 30px);
     max-width: calc(1320px / 3);
-    height: 500px;
+    min-height: 350px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 15px;
     background: #fff;
-    box-shadow: rgba(0, 0, 0, 0.1) 0 30px 40px;
-    transition: all .5s ease-out;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 10px 20px;
+    border-radius: 20px;
+    transition: all .3s ease-out;
 }
 
 card:hover {
     transform: translateY(-15px);
-    box-shadow: rgba(0, 0, 0, 0.1) 0 30px 60px;
-    transition: all .2s ease-out;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 30px 60px;
 }
 
 card.small {
@@ -412,18 +413,114 @@ card.small {
 
 /* Card Components */
 
-card>h3 {
-    font-size: 30px !important;
-    margin: 10px 0;
+card>.inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    width: calc(100% - 80px);
+    background: #272727;
+    border-radius: 10px;
+    color: #fff;
+    margin-bottom: 20px;
+    padding: 20px;
 }
 
-.price {
-    display: inline-block;
-    padding: 2px 8px;
-    font-size: 16px !important;
+card .full-row {
+    display: flex;
+    width: calc(100% - 40px);
+    justify-content: space-between;
+    align-items: center;
+}
+
+card .full-row.fullest {
+    width: 100%;
+}
+
+card>.row-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+card h3 {
+    color: #272727;
+    font-size: 35px !important;
+    margin: 20px 0;
+    line-height: 1em;
+}
+
+card>.fa-stack {
+    font-size: 130% !important;
+    margin-top: 15px;
+    margin-right: auto;
+    margin-left: 10px;
+}
+
+card .vert {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+card .vert>.label {
+    font-size: 16px;
+    opacity: 0.3;
+    line-height: 10px;
+}
+
+card .vert>.model {
+    font-size: 20px;
     font-weight: 600;
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 20px;
+}
+
+card .ram-size {
+    font-size: 60px;
+    opacity: 0.1;
+    font-weight: 600;
+    line-height: 0;
+}
+
+card .stars {
+    text-align: right;
+}
+
+card .stars svg {
+    transition: transform .5s ease-out;
+}
+
+card .stars svg:hover {
+    transform: rotate(360deg);
+    transition: transform .2s ease-out;
+}
+
+card .price {
+    display: inline;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    padding: 4px 15px;
+    background: #272727;
+    border-radius: 9999px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+    transition: all .2s ease-out;
+}
+
+card .price:hover {
+    opacity: 0.8;
+}
+
+@media all and (max-width: 1000px) {
+    .split-content {
+        flex-direction: column;
+    }
+    .split-content>div {
+        align-items: center !important;
+        text-align: center;
+    }
+    .split-content img {
+        margin: 0;
+    }
 }
 
 @media all and (min-width: 700px) {
@@ -443,19 +540,6 @@ card>h3 {
     .main-link {
         margin: 60px 0;
         font-size: 30px;
-    }
-}
-
-@media all and (max-width: 1000px) {
-    .split-content {
-        flex-direction: column;
-    }
-    .split-content>div {
-        align-items: center !important;
-        text-align: center;
-    }
-    .split-content img {
-        margin: 0;
     }
 }
 

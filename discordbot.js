@@ -192,8 +192,6 @@ function getEmoji(message, name) {
     return message.guild.emojis.cache.find(emoji => emoji.name == name)
 }
 
-
-
 async function startGame(message) {
     try {
         await message.react("🔈");
