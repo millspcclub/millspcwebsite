@@ -56,14 +56,14 @@
             "featured": true,
             "type": 2,
             "name": "High Performance",
-            "price": 1350,
+            "price": 1450,
             "cpu": "Ryzen 7 3700X",
             "ram": {
                 "model": "DDR4-3200 CL16 ",
                 "amount": 16
             },
             "gpu": "NVIDIA RTX 2070 super",
-            "relURL": "/list/HB8FdD"
+            "relURL": "/list/6sCzNP"
         }
     ]
 }
