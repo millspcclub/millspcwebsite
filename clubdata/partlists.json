@@ -11,7 +11,7 @@
         "NVIDIA RTX 2080Ti": 7,
         "NVIDIA RTX 3070": 8,
         "NVIDIA RTX 3080": 9,
-        "NVIDIA RTX 3090": 10,
+        "NVIDIA RTX 3090": 10
     },
     "lists": [{
             "featured": true,
@@ -43,11 +43,11 @@
             "featured": true,
             "type": 2,
             "name": "Rip Wallet",
-            "price": 1600,
-            "cpu": "Ryzen 5 3600X",
+            "price": 4000,
+            "cpu": "Ryzen 9 3950x",
             "ram": {
                 "model": "DDR4-3600 CL18 ",
-                "amount": 16
+                "amount": 128
             },
             "gpu": "NVIDIA RTX 3090",
             "relURL": "/list/GjhFdD"
@@ -62,7 +62,7 @@
                 "model": "DDR4-3200 CL16 ",
                 "amount": 16
             },
-            "gpu": "NVIDIA GTX 1080 Ti",
+            "gpu": "NVIDIA RTX 2070 super",
             "relURL": "/list/HB8FdD"
         }
     ]
