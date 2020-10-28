@@ -4,12 +4,14 @@
         "Ryzen 5 3600X": 3,
         "Ryzen 7 3700X": 4,
 
-        "NVIDIA GTX 1650 super": 2,
-        "NVIDIA GTX 1660 super": 3,
-        "NVIDIA GTX 1660 Ti": 4,
-        "NVIDIA GTX 1080 Ti": 5,
-        "NVIDIA RTX 2080Ti": 6,
-        "NVIDIA RTX 3090": 8
+        "NVIDIA GTX 1650 super": 3,
+        "NVIDIA GTX 1660 super": 4,
+        "RADEON RX 5600 XT": 5,
+        "NVIDIA RTX 2070 super": 6,
+        "NVIDIA RTX 2080Ti": 7,
+        "NVIDIA RTX 3070": 8,
+        "NVIDIA RTX 3080": 9,
+        "NVIDIA RTX 3090": 10,
     },
     "lists": [{
             "featured": true,
