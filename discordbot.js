@@ -50,10 +50,14 @@ let vcs = [];
 bot.on('voiceStateUpdate', (oldMember, newMember) => {
     let createChannel = newMember.channel;
 
+
     if (createChannel !== null && createChannel.name === "⭐ Create VC") {
+        console.log(createChannel.position);
         newMember.guild.channels.create(`✨ ${newMember.member.displayName}'s Room`, {
                 type: 'voice',
-                parent: createChannel.parent
+                bitrate: 96000,
+                parent: createChannel.parent,
+                position: createChannel.position
             })
             .then(vc => {
                 newMember.member.voice.setChannel(vc);
