@@ -52,17 +52,17 @@
         {
             "featured": true,
             "type": 2,
-            "name": "Rip Wallet",
-            "price": 4500,
-            "cpu": "Ryzen 9 5950x",
+            "name": "Thousand dollar build",
+            "price": 1000,
+            "cpu": "Ryzen 5 3600XT",
             "ram": {
-                "model": "DDR4-3600 CL18 ",
-                "amount": 128
+                "model": "DDR4-3200 CL16 ",
+                "amount": 16
             },
-            "gpu": "NVIDIA RTX 3090",
-            "relURL": "/list/zPx7Xb"
+            "gpu": "RADEON RX 5700 XT",
+            "relURL": "/list/2tM9NP"
         },
-        {
+                {
             "featured": true,
             "type": 2,
             "name": "High Performance",
@@ -78,15 +78,29 @@
         {
             "featured": true,
             "type": 2,
-            "name": "Thousand dollar build",
-            "price": 1000,
-            "cpu": "Ryzen 5 3600XT",
+            "name": "Rip Wallet",
+            "price": 4500,
+            "cpu": "Ryzen 9 5950x",
+            "ram": {
+                "model": "DDR4-3600 CL18 ",
+                "amount": 128
+            },
+            "gpu": "NVIDIA RTX 3090",
+            "relURL": "/list/zPx7Xb"
+        },
+        {
+            "featured": true,
+            "type": 2,
+            "name": "Glow Box",
+            "price": 2500,
+            "cpu": "Ryzen 7 5800X",
             "ram": {
                 "model": "DDR4-3200 CL16 ",
-                "amount": 16
+                "amount": 32
             },
-            "gpu": "RADEON RX 5700 XT",
-            "relURL": "/list/2tM9NP"
-        }
+            "gpu": "NVIDIA RTX 3080",
+            "relURL": "/list/yv468J"
+        },
+
     ]
 }
