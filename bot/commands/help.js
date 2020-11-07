@@ -20,7 +20,7 @@ const { prefix } = require("../bot-config.json");
 //     }
 // }
 
-function sendHelp(cmds, msg, args) {
+function sendHelp(msg, args, cmds) {
 
     let docs = [];
     for (const [key, value] of cmds.entries()) {
@@ -30,23 +30,39 @@ function sendHelp(cmds, msg, args) {
         });
     }
 
-    msg.channel.send({
-        embed: {
-            color: "#0099ff",
-            title: 'PC CLUB BOT',
-            url: 'https://pcclub.now.sh/',
-            author: {
-                icon_url: 'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/24b0f5b1-603f-4c6e-9c22-c039dd69ea75/PC_Club_Logo_%282%29.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20201020%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20201020T081240Z&X-Amz-Expires=86400&X-Amz-Signature=0cd47b0add89c409ec1d839a92616c358bc65138a8323dd736f15938724b2220&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22PC_Club_Logo_%282%29.png%22',
-            },
-            description: '**BOT COMMANDS:**',
-            fields: docs,
-            timestamp: new Date(),
-            footer: {
-                text: 'Train the mind. Power the future.',
-                icon_url: 'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/24b0f5b1-603f-4c6e-9c22-c039dd69ea75/PC_Club_Logo_%282%29.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20201020%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20201020T081240Z&X-Amz-Expires=86400&X-Amz-Signature=0cd47b0add89c409ec1d839a92616c358bc65138a8323dd736f15938724b2220&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22PC_Club_Logo_%282%29.png%22',
-            },
-        }
-    });
+    if (args.length == 0) {
+        msg.channel.send({
+            embed: {
+                color: "#0099ff",
+                title: 'PC CLUB BOT',
+                url: 'https://pcclub.now.sh/',
+                author: {
+                    icon_url: 'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/24b0f5b1-603f-4c6e-9c22-c039dd69ea75/PC_Club_Logo_%282%29.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20201020%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20201020T081240Z&X-Amz-Expires=86400&X-Amz-Signature=0cd47b0add89c409ec1d839a92616c358bc65138a8323dd736f15938724b2220&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22PC_Club_Logo_%282%29.png%22',
+                },
+                description: '**BOT COMMANDS:**',
+                fields: docs,
+                timestamp: new Date(),
+                footer: {
+                    text: 'Train the mind. Power the future.',
+                    icon_url: 'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/24b0f5b1-603f-4c6e-9c22-c039dd69ea75/PC_Club_Logo_%282%29.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20201020%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20201020T081240Z&X-Amz-Expires=86400&X-Amz-Signature=0cd47b0add89c409ec1d839a92616c358bc65138a8323dd736f15938724b2220&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22PC_Club_Logo_%282%29.png%22',
+                },
+            }
+        });
+    } else {
+        msg.channel.send({
+            embed: {
+                color: "#0099ff",
+                title: 'PC CLUB BOT',
+                url: 'https://pcclub.now.sh/',
+                description: '**BOT COMMANDS:**',
+                fields: docs.filter(cmd => cmd.name === args[0]),
+                timestamp: new Date(),
+                footer: {
+                    text: 'Train the mind. Power the future.'
+                },
+            }
+        });
+    }
 
     return;
 
@@ -86,7 +102,7 @@ module.exports = {
     name: 'help',
     description: 'Find out more about the bot + commands',
     example: "pc-help [command]",
-    execute(cmds, msg, args) {
-        sendHelp(cmds, msg, args);
+    execute(msg, args, extras) {
+        sendHelp(msg, args, extras.cmds);
     },
 };

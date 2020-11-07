@@ -36,11 +36,15 @@ bot.on("message", msg => {
 
     if (!bot.commands.has(command)) return;
 
+    const extras = {
+        cmds: commands,
+        vcs: vcs
+    }
+
     try {
-        if (command === "help") bot.commands.get(command).execute(commands, msg, args);
-        else bot.commands.get(command).execute(msg, args);
+        bot.commands.get(command).execute(msg, args, extras);
     } catch (error) {
-        msg.reply(`❌ Sorry, something went terribly wrong:\n\`\`\`${error}\`\`\``)
+        msg.reply(`😥 something went terribly wrong:\n\`\`\`${error}\`\`\``)
     }
     return;
 });
@@ -50,9 +54,7 @@ let vcs = [];
 bot.on('voiceStateUpdate', (oldMember, newMember) => {
     let createChannel = newMember.channel;
 
-
     if (createChannel !== null && createChannel.name === "⭐ Create VC") {
-        console.log(createChannel.position);
         newMember.guild.channels.create(`✨ ${newMember.member.displayName}'s Room`, {
                 type: 'voice',
                 bitrate: 96000,
@@ -72,25 +74,12 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
         if (vcs[oldMember.channelID] !== undefined) {
             let channel = oldMember.guild.channels.cache.get(oldMember.channelID);
             if (channel.members.size == 0) {
-                channel.setName("👋 Farewell~")
-                setTimeout(() => {
-                    channel.delete();
-                    vcs[oldMember.channelID] = undefined;
-                }, 500);
+                channel.delete();
+                vcs[oldMember.channelID] = undefined;
             }
         }
     }
 });
-
-async function startGame(message) {
-    try {
-        await message.react("🔈");
-        await message.react("🔊");
-        await message.react("🏁");
-    } catch (error) {
-        console.error('One of the emojis failed to react.' + error);
-    }
-}
 
 // Init dotenv
 require("dotenv").config();
