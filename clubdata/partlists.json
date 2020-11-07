@@ -53,14 +53,14 @@
             "featured": true,
             "type": 2,
             "name": "Rip Wallet",
-            "price": 4000,
-            "cpu": "Ryzen 9 3950x",
+            "price": 4500,
+            "cpu": "Ryzen 9 5950x",
             "ram": {
                 "model": "DDR4-3600 CL18 ",
                 "amount": 128
             },
             "gpu": "NVIDIA RTX 3090",
-            "relURL": "/list/GjhFdD"
+            "relURL": "/list/zPx7Xb"
         },
         {
             "featured": true,
