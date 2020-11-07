@@ -1,17 +1,17 @@
 {
     "ratings": {
         "Ryzen 3 3100": 2,
+        "Ryzen 5 2600X": 3,
         "Ryzen 5 3600X": 3,
+        "Ryzen 5 3600XT": 3,
         "Ryzen 7 3700X": 4,
         "Intel i5 10600k": 5,
         "Intel i9 10900k": 6,
         "Ryzen 5 5600X": 7,
         "Ryzen 7 5800X": 8,
+        "Ryzen 9 3950x": 9,
         "Ryzen 9 5900X": 9,
         "Ryzen 9 5950X": 10,
-        
-        
-        
 
         "NVIDIA GTX 1650 super": 3,
         "NVIDIA GTX 1660 super": 4,
