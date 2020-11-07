@@ -67,13 +67,13 @@
             "type": 2,
             "name": "High Performance",
             "price": 1500,
-            "cpu": "Ryzen 7 5800X",
+            "cpu": "Ryzen 5 5600X",
             "ram": {
                 "model": "DDR4-3200 CL16 ",
                 "amount": 16
             },
-            "gpu": "NVIDIA RTX 3070",
-            "relURL": "/list/xqWHz7"
+            "gpu": "NVIDIA RTX 3080",
+            "relURL": "/list/2nrgbv"
         },
         {
             "featured": true,
