@@ -1,21 +1,22 @@
 {
     "ratings": {
         "Ryzen 3 3100": 2,
+        "Ryzen 5 2600X": 3,
         "Ryzen 5 3600X": 3,
+        "Ryzen 5 3600XT": 3,
         "Ryzen 7 3700X": 4,
         "Intel i5 10600k": 5,
         "Intel i9 10900k": 6,
         "Ryzen 5 5600X": 7,
         "Ryzen 7 5800X": 8,
+        "Ryzen 9 3950x": 9,
         "Ryzen 9 5900X": 9,
         "Ryzen 9 5950X": 10,
-        
-        
-        
 
         "NVIDIA GTX 1650 super": 3,
         "NVIDIA GTX 1660 super": 4,
         "RADEON RX 5600 XT": 5,
+        "RADEON RX 5700 XT": 5.5,
         "NVIDIA RTX 2070 super": 6,
         "NVIDIA RTX 2080Ti": 7,
         "NVIDIA RTX 3070": 8,
@@ -30,49 +31,75 @@
             "cpu": "Ryzen 3 3100",
             "ram": {
                 "model": "DDR4-3000 CL16 ",
-                "amount": 8
+                "amount": 16
             },
             "gpu": "NVIDIA GTX 1650 super",
-            "relURL": "/list/K9Fbj2"
+            "relURL": "/list/qM4z7X"
         },
         {
             "featured": true,
             "type": 1,
             "name": "Good Frames",
-            "price": 765,
-            "cpu": "Ryzen 5 3600X",
+            "price": 750,
+            "cpu": "Ryzen 5 2600X",
             "ram": {
                 "model": "DDR4-3200 CL16 ",
                 "amount": 16
             },
-            "gpu": "NVIDIA GTX 1660 Ti",
-            "relURL": "/list/XhtD4d"
+            "gpu": "NVIDIA GTX 1660 super",
+            "relURL": "/list/tHM9NP"
+        },
+        {
+            "featured": true,
+            "type": 2,
+            "name": "Thousand dollar build",
+            "price": 1000,
+            "cpu": "Ryzen 5 3600XT",
+            "ram": {
+                "model": "DDR4-3200 CL16 ",
+                "amount": 16
+            },
+            "gpu": "RADEON RX 5700 XT",
+            "relURL": "/list/2tM9NP"
+        },
+                {
+            "featured": true,
+            "type": 2,
+            "name": "High Performance",
+            "price": 1500,
+            "cpu": "Ryzen 5 5600X",
+            "ram": {
+                "model": "DDR4-3200 CL16 ",
+                "amount": 16
+            },
+            "gpu": "NVIDIA RTX 3080",
+            "relURL": "/list/Fbtwz7"
         },
         {
             "featured": true,
             "type": 2,
             "name": "Rip Wallet",
-            "price": 4000,
-            "cpu": "Ryzen 9 3950x",
+            "price": 4500,
+            "cpu": "Ryzen 9 5950x",
             "ram": {
                 "model": "DDR4-3600 CL18 ",
                 "amount": 128
             },
             "gpu": "NVIDIA RTX 3090",
-            "relURL": "/list/GjhFdD"
+            "relURL": "/list/zPx7Xb"
         },
         {
             "featured": true,
             "type": 2,
-            "name": "High Performance",
-            "price": 1450,
-            "cpu": "Ryzen 7 3700X",
+            "name": "Glow Box",
+            "price": 2500,
+            "cpu": "Ryzen 7 5800X",
             "ram": {
                 "model": "DDR4-3200 CL16 ",
-                "amount": 16
+                "amount": 32
             },
-            "gpu": "NVIDIA RTX 2070 super",
-            "relURL": "/list/6sCzNP"
+            "gpu": "NVIDIA RTX 3080",
+            "relURL": "/list/yv468J"
         }
     ]
 }
