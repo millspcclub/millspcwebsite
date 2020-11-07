@@ -16,6 +16,7 @@
         "NVIDIA GTX 1650 super": 3,
         "NVIDIA GTX 1660 super": 4,
         "RADEON RX 5600 XT": 5,
+        "RADEON RX 5700 XT": 5.5,
         "NVIDIA RTX 2070 super": 6,
         "NVIDIA RTX 2080Ti": 7,
         "NVIDIA RTX 3070": 8,
@@ -30,23 +31,23 @@
             "cpu": "Ryzen 3 3100",
             "ram": {
                 "model": "DDR4-3000 CL16 ",
-                "amount": 8
+                "amount": 16
             },
             "gpu": "NVIDIA GTX 1650 super",
-            "relURL": "/list/K9Fbj2"
+            "relURL": "/list/qM4z7X"
         },
         {
             "featured": true,
             "type": 1,
             "name": "Good Frames",
-            "price": 765,
-            "cpu": "Ryzen 5 3600X",
+            "price": 750,
+            "cpu": "Ryzen 5 2600X",
             "ram": {
                 "model": "DDR4-3200 CL16 ",
                 "amount": 16
             },
-            "gpu": "NVIDIA GTX 1660 Ti",
-            "relURL": "/list/XhtD4d"
+            "gpu": "NVIDIA GTX 1660 super",
+            "relURL": "/list/tHM9NP"
         },
         {
             "featured": true,
@@ -73,6 +74,19 @@
             },
             "gpu": "NVIDIA RTX 2070 super",
             "relURL": "/list/6sCzNP"
+        }
+        {
+            "featured": true,
+            "type": 2,
+            "name": "Thousand dollar build",
+            "price": 1000,
+            "cpu": "Ryzen 5 3600XT",
+            "ram": {
+                "model": "DDR4-3200 CL16 ",
+                "amount": 16
+            },
+            "gpu": "RADEON RX 5700 XT",
+            "relURL": "/list/2M9NP"
         }
     ]
 }
