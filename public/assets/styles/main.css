@@ -58,13 +58,13 @@ img {
     -webkit-user-drag: none;
 }
 
-ul {
+.main-content ul {
     margin: 0;
     list-style: none;
     padding-left: 1em;
 }
 
-ul li::before {
+.main-content ul li::before {
     display: inline-block;
     width: 1em;
     content: ".\2022 ";
@@ -521,10 +521,11 @@ card .price:hover {
 .form-section {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 80vh;
+    margin: 10vh 0;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .form-section .text {
@@ -538,11 +539,11 @@ card .price:hover {
 .form-card {
     display: flex;
     margin-top: 50px;
-    width: 90%;
+    width: calc(100% - 80px);
     max-width: 1000px;
     justify-content: center;
     align-items: center;
-    padding: 2em;
+    padding: 20px;
     border-radius: 15px;
     background: #f7f7f7;
 }
@@ -556,6 +557,18 @@ form {
     flex-wrap: wrap;
 }
 
+textarea {
+    resize: none;
+    width: 100%;
+    height: 100%;
+    border: .5px #1c1e211a solid;
+    border-radius: 7px;
+    padding: 10px;
+    outline: 0;
+    -webkit-appearance: none;
+    transition: box-shadow .7s cubic-bezier(.26, 0, .33, 1), transform .3s cubic-bezier(.26, 0, .33, 1)
+}
+
 input {
     width: 100%;
     height: 50px;
@@ -563,7 +576,6 @@ input {
     background-color: #edf2f77c;
     border: .5px #1c1e211a solid;
     border-radius: 7px;
-    color: var(--primary);
     outline: 0;
     padding-left: 10px;
     -webkit-appearance: none;
@@ -583,22 +595,67 @@ form .block {
     margin: 20px;
 }
 
-.button {
+form .block.full {
+    flex-grow: initial;
+    width: 100%;
+}
+
+.grecaptcha-badge {
+    display: none;
+}
+
+.filepond--credits {
+    display: none;
+}
+
+.filepond {
+    width: 100%;
+}
+
+.filepond--drop-label {
+    color: #4c4e53;
+}
+
+.filepond--label-action {
+    text-decoration-color: #babdc0;
+}
+
+.filepond--panel-root {
+    border-radius: 2em;
+    background-color: #edf0f4;
+    height: 1em;
+}
+
+.filepond--item-panel {
+    background-color: #595e68;
+}
+
+.filepond--drip-blob {
+    background-color: #7f8a9a;
+}
+
+.dark-button {
     font-size: 20px;
     font-weight: 500;
     border: none;
     outline: none;
     cursor: pointer;
     padding: 12px 30px;
-    border-radius: 10px;
+    border-radius: 8px;
     color: white;
     background: rgba(0, 0, 0, 0.8);
-    transition: all .3s ease-out;
+    transition: all .2s ease-out;
 }
 
-.button:hover {
-    translate: transformY(4px);
+.dark-button:hover {
+    transform: translateY(-4px);
     box-shadow: rgba(0, 0, 0, 0.3) 0 3px 10px;
+}
+
+.dark-button:active {
+    transition: all 0s;
+    transform: translateY(-4px) scale(0.98);
+    opacity: 0.6;
 }
 
 @media all and (max-width: 1000px) {

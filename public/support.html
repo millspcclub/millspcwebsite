@@ -10,7 +10,9 @@
     <link rel="apple-touch-icon" sizes="128x128" href="/assets/images/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/3.0.0-beta.6/aos.css" integrity="sha256-hpX1/GTWVZP5djpbKNFLw048+AIxfh/60hJafI/t+v4=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" />
-    <link rel="stylesheet" href="/assets/styles/main.css">
+    <link href="/assets/styles/main.css" rel="stylesheet">
+    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css" rel="stylesheet">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/3.0.0-beta.6/aos.js" integrity="sha256-3R+azxOxLxidpHXg8jx8UFdnhZq2IKrGNpZJdAk8KB0=" crossorigin="anonymous"></script>
@@ -23,37 +25,61 @@
 <body style="background: #fff;">
     <div class="form-section">
         <div class="text">
+            <img src="/assets/images/logo.png" width="100">
             <h3>MHS PC Club<sup>2</sup></h3>
             <h1>Support</h1>
         </div>
 
-        <div class="form-card">
-            <form id="support-form" action="ttps://usebasin.com/f/f9a95788a2f6" class="pageclip-form" method="post">
+        <div data-aos-delay="100" data-aos="zoom-out" class="form-card">
+            <form id="support-form" action="https://usebasin.com/f/f9a95788a2f6" class="pageclip-form" method="post">
                 <div class="block">
-                    <input type="text" name="name" placeholder="Name" />
-                    <input type="email" name="email" placeholder="Email" />
+                    <input data-aos-duration="800" data-aos="flip-up" type="text" name="name" placeholder="Name" />
+                    <input data-aos-delay="800" data-aos-duration="1200" data-aos="flip-up" type="email" name="email" placeholder="Email" />
                 </div>
 
                 <div class="block">
-                    <input type="text" name="name" placeholder="Name" />
-                    <input type="email" name="email" placeholder="Email" />
+                    <textarea data-aos-duration="1400" data-aos="flip-up" type="text" name="main" rows="6" placeholder="Ask away!"></textarea>
                 </div>
 
-                <div class="block">
-                    <button class="button">Submit</button>
-                    <!-- <button type="submit" class="g-recaptcha" data-sitekey="6LfvGuAZAAAAAEh-qb1H2dH36VXiVUbKPvRdMO8-" data-callback='onSubmit' data-action='submit'>Submit</button> -->
+                <div class="block full">
+                    <input type="file" class="filepond" name="attatchments" multiple data-allow-reorder="true" data-max-file-size="3MB" data-max-files="5">
+                </div>
+
+                <div data-aos-delay="1000" data-aos="flip-up" lass="block full">
+                    <button type="submit" class="dark-button g-recaptcha" data-sitekey="6LfvGuAZAAAAAEh-qb1H2dH36VXiVUbKPvRdMO8-" data-callback='onSubmit' data-action='submit'>Submit</button>
                 </div>
             </form>
         </div>
     </div>
 
+    <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+    <script src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.min.js"></script>
+    <script src="https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.min.js"></script>
+    <script src="https://unpkg.com/filepond-plugin-image-exif-orientation/dist/filepond-plugin-image-exif-orientation.min.js"></script>
+    <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js"></script>
+
     <script>
+        FilePond.registerPlugin(
+            // encodes the file as base64 data
+            FilePondPluginFileEncode,
+            // validates the size of the file
+            FilePondPluginFileValidateSize,
+            // corrects mobile image orientation
+            FilePondPluginImageExifOrientation,
+            // previews dropped images
+            FilePondPluginImagePreview
+        );
+
+        const inputElement = document.querySelector('input[type="file"]');
+        const pond = FilePond.create(inputElement);
+
         function onSubmit(token) {
             document.getElementById("support-form").submit();
         }
         AOS.init({
             duration: 1000,
+            delay: 500,
             easing: "easeInOutQuint",
         });
     </script>
