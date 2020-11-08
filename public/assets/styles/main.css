@@ -428,11 +428,11 @@ card.small {
 
 card>.inner {
     display: flex;
+    width: calc(100% - 40px);
     flex-direction: column;
     justify-content: space-between;
     flex-grow: 1;
     padding: 20px;
-    width: calc(100% - 40px);
     background: #272727;
     border-radius: 10px;
     color: #fff;
@@ -504,6 +504,7 @@ card .stars svg {
 
 card .stars svg:hover {
     transition: all 0.1s ease-out;
+    -webkit-filter: drop-shadow(#ffcc00 0 0 5px);
     filter: drop-shadow(#ffcc00 0 0 5px);
 }
 
@@ -528,11 +529,11 @@ card .price:hover {
 
 .form-section {
     display: flex;
-    flex-direction: column;
     min-height: 80vh;
-    margin: 10vh 0;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 10vh 0;
     overflow-x: hidden;
 }
 
@@ -546,32 +547,32 @@ card .price:hover {
 
 .form-card {
     display: flex;
-    margin-top: 50px;
     width: calc(100% - 80px);
     max-width: 1000px;
     justify-content: center;
     align-items: center;
     padding: 20px;
+    margin-top: 50px;
     border-radius: 15px;
     background: #f7f7f7;
 }
 
 form {
     display: flex;
-    flex-grow: 1;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    flex-grow: 1;
     flex-wrap: wrap;
 }
 
 textarea {
-    resize: none;
     width: 100%;
     height: 120px;
+    padding: 10px;
+    resize: none;
     border: 2px #1c1e211a solid;
     border-radius: 7px;
-    padding: 10px;
     outline: 0;
     -webkit-appearance: none;
     transition: box-shadow .7s cubic-bezier(.26, 0, .33, 1), transform .3s cubic-bezier(.26, 0, .33, 1)
@@ -606,8 +607,8 @@ form .block {
 }
 
 form .block.full {
-    flex-grow: initial;
     width: 100%;
+    flex-grow: initial;
 }
 
 .grecaptcha-badge {
@@ -627,13 +628,14 @@ form .block.full {
 }
 
 .filepond--label-action {
+    -webkit-text-decoration-color: #babdc0;
     text-decoration-color: #babdc0;
 }
 
 .filepond--panel-root {
+    height: 1em;
     border-radius: 2em;
     background-color: #edf0f4;
-    height: 1em;
 }
 
 .filepond--item-panel {
@@ -645,12 +647,12 @@ form .block.full {
 }
 
 .dark-button {
+    padding: 12px 30px;
     font-size: 20px;
     font-weight: 500;
     border: none;
     outline: none;
     cursor: pointer;
-    padding: 12px 30px;
     border-radius: 8px;
     color: white;
     background: rgba(0, 0, 0, 0.8);
