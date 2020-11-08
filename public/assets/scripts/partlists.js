@@ -34,7 +34,11 @@
                                     .append("<span class='label'>Processor</span>")
                                     .append(`<span class='model'>${partlist.cpu}</span>`)
                                 )
-                                .append(`<span class="stars">${star.repeat([data.ratings[partlist.cpu]])}</span>`)
+                                .append(
+                                    $('<span class="stars"></span>')
+                                    .append(star % 1 != 0 ? '<i style="color: #FFCC00; margin-left: 5px" class="fas fa-flip-horizontal fa-star-half"></i>' : "")
+                                    .append(star.repeat(Math.floor(data.ratings[partlist.cpu])))
+                                )
                             )
                             .append(
                                 $('<div class="full-row fullest"></div>')
@@ -69,11 +73,6 @@
                 });
             }
 
-            const updateLax = () => {
-                lax.update(window.scrollY)
-                window.requestAnimationFrame(updateLax)
-            }
-
-            window.requestAnimationFrame(updateLax)
+            scroll.update();
         })
 }());

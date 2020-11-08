@@ -5,6 +5,10 @@
 
 /* Universal Properties */
 
+* {
+    box-sizing: border-box;
+}
+
 ::-moz-selection {
     color: white;
     background: #2bb3ffcc;
@@ -96,7 +100,7 @@ img {
 nav {
     display: flex;
     position: fixed;
-    width: calc(100vw - 40px);
+    width: 100vw;
     justify-content: center;
     align-items: center;
     padding: 0 20px;
@@ -205,6 +209,10 @@ nav>span {
     justify-content: center;
     background: #191919;
     color: #fff;
+}
+
+.section.tall {
+    min-height: 100vh;
 }
 
 .section.light {
@@ -420,11 +428,11 @@ card.small {
 
 card>.inner {
     display: flex;
-    width: calc(100% - 80px);
     flex-direction: column;
     justify-content: space-between;
     flex-grow: 1;
     padding: 20px;
+    width: calc(100% - 40px);
     background: #272727;
     border-radius: 10px;
     color: #fff;
@@ -491,12 +499,12 @@ card .stars {
 }
 
 card .stars svg {
-    transition: transform .5s ease-out;
+    transition: all 1s ease-out;
 }
 
 card .stars svg:hover {
-    transform: rotate(360deg);
-    transition: transform .2s ease-out;
+    transition: all 0.1s ease-out;
+    filter: drop-shadow(#ffcc00 0 0 5px);
 }
 
 card .price {
@@ -560,8 +568,8 @@ form {
 textarea {
     resize: none;
     width: 100%;
-    height: 100%;
-    border: .5px #1c1e211a solid;
+    height: 120px;
+    border: 2px #1c1e211a solid;
     border-radius: 7px;
     padding: 10px;
     outline: 0;
@@ -574,16 +582,18 @@ input {
     height: 50px;
     margin: 10px 0;
     background-color: #edf2f77c;
-    border: .5px #1c1e211a solid;
+    border: 2px #1c1e211a solid;
     border-radius: 7px;
     outline: 0;
     padding-left: 10px;
     -webkit-appearance: none;
-    transition: box-shadow .7s cubic-bezier(.26, 0, .33, 1), transform .3s cubic-bezier(.26, 0, .33, 1)
+    transition: all .2s ease-in !important;
 }
 
+textarea:focus,
 input:focus {
-    box-shadow: #1c1e211e 0 2px 5px;
+    border: 2px #00ccff solid;
+    box-shadow: #00ccff2f 0 1px 5px;
 }
 
 form .block {
@@ -656,6 +666,29 @@ form .block.full {
     transition: all 0s;
     transform: translateY(-4px) scale(0.98);
     opacity: 0.6;
+}
+
+
+/* Scroll */
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.go-right {
+    transform: translateX(-10px);
+    transition: transform .6s ease-in-out;
+    transition-delay: 0.3s;
+}
+
+.letter {
+    margin: 0 0.5px !important;
+}
+
+.scroll-class {
+    opacity: 1;
+    transform: initial;
 }
 
 @media all and (max-width: 1000px) {

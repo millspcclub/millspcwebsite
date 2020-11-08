@@ -52,7 +52,7 @@
         {
             "featured": true,
             "type": 2,
-            "name": "Thousand dollar build",
+            "name": "1k build",
             "price": 1000,
             "cpu": "Ryzen 5 3600XT",
             "ram": {
@@ -62,7 +62,7 @@
             "gpu": "RADEON RX 5700 XT",
             "relURL": "/list/2tM9NP"
         },
-                {
+        {
             "featured": true,
             "type": 2,
             "name": "High Performance",
