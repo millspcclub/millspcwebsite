@@ -9,7 +9,7 @@ app.get("/", (req, res) => {
 
 app.get("/support", (req, res) => {
     res.sendFile(__dirname + "/public/support.html");
-})
+});
 
 app.get("/homebutton", (req, res) => {
     res.sendFile(__dirname + "/public/button.html");

@@ -56,7 +56,7 @@ const reverseNums = {
     '8⃣': 8,
     '9⃣': 9,
     '🔟': 10
-}
+};
 
 function getPartLists() {
     let raw = fs.readFileSync("clubdata/partlists.json");
@@ -68,7 +68,7 @@ function partsListString(parts) {
     var output = "▬▬▬ ***PART LISTS*** ▬▬▬\n";
 
     for (const [i, list] of parts.lists.entries()) {
-        output += `\`\`\`${i + 1} - ${emojis[list.type]} ${list.name} - $${list.price}\`\`\``
+        output += `\`\`\`${i + 1} - ${emojis[list.type]} ${list.name} - $${list.price}\`\`\``;
     }
 
     output += "\nChoose *any* of the following: ";
@@ -95,23 +95,23 @@ function getLists(msg, args) {
     msg.channel.send(text[0])
         .then(async message => {
 
-            reactNum(text[1], message)
+            reactNum(text[1], message);
 
             const collector = message.createReactionCollector(filter, {
                 time: 24 * 60 * 60 * 1000
-            })
+            });
 
             collector.on("collect", (reaction, user) => {
                 const n = reverseNums[reaction.emoji.name] - 1;
-                message.channel.send(`\n**Enjoy \`☕ list#${n + 1}!\`** ~ <https://pcpartpicker.com${parts.lists[n].relURL}>`)
-            })
+                message.channel.send(`\n**Enjoy \`☕ list#${n + 1}!\`** ~ <https://pcpartpicker.com${parts.lists[n].relURL}>`);
+            });
 
             collector.on("end", collected => {
                 message.edit(
                     message.content
                     .replace("PART LISTS", "~~PART LISTS~~ (Expired)")
                     .replace("Choose *any* of the following:", "~~Choose *any* of the following:~~ (Expired)")
-                )
+                );
 
                 message.react("❌");
             });

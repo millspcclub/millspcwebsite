@@ -20,7 +20,7 @@ bot.once("ready", () => {
             name: 'with hardware | pc-help',
             type: 'PLAYING'
         }
-    })
+    });
 
     console.log("[✔]: Poggers! We are running!");
 });
@@ -39,12 +39,12 @@ bot.on("message", msg => {
     const extras = {
         cmds: commands,
         vcs: vcs
-    }
+    };
 
     try {
         bot.commands.get(command).execute(msg, args, extras);
     } catch (error) {
-        msg.reply(`😥 something went terribly wrong:\n\`\`\`${error}\`\`\``)
+        msg.reply(`😥 something went terribly wrong:\n\`\`\`${error}\`\`\``);
     }
     return;
 });
@@ -67,7 +67,7 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
             })
             .catch(err => {
                 console.error(err);
-            })
+            });
     }
 
     if (!vcs.includes(oldMember.channelID)) {

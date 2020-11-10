@@ -11,7 +11,7 @@ function calculate(msg, args) {
         .replace(/--/g, " - -")
         .replace(/,/g, "")
         .replace(/\[/g, "(")
-        .replace(/\]/g, ")")
+        .replace(/\]/g, ")");
 
     try {
         let someError = false;
@@ -24,7 +24,7 @@ function calculate(msg, args) {
         }
 
         if (someError) {
-            msg.channel.send("❌ Accepted Chars: `1234567890+-*/%()`")
+            msg.channel.send("❌ Accepted Chars: `1234567890+-*/%()`");
         } else {
             answer = eval(equation);
             msg.channel.send(`🧠 --> \`${answer}\``);

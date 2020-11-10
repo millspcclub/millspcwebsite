@@ -76,7 +76,7 @@ function sendHelp(msg, args, cmds) {
             selected = {
                 name: "Couldn't find what you're looking for.",
                 value: "For the full list of commands, type:\n```pc-help [command]```"
-            }
+            };
 
         const selectiveDocs = {
             color: "#474747",
@@ -92,7 +92,7 @@ function sendHelp(msg, args, cmds) {
                 text: 'Train the mind. Power the future.',
                 icon_url: 'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/24b0f5b1-603f-4c6e-9c22-c039dd69ea75/PC_Club_Logo_%282%29.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20201020%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20201020T081240Z&X-Amz-Expires=86400&X-Amz-Signature=0cd47b0add89c409ec1d839a92616c358bc65138a8323dd736f15938724b2220&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22PC_Club_Logo_%282%29.png%22',
             },
-        }
+        };
 
         msg.channel.send({ embed: selectiveDocs });
     }
