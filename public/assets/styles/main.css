@@ -693,6 +693,10 @@ form .block.full {
     transform: initial;
 }
 
+#discord-iframe {
+    max-width: 500px;
+}
+
 @media all and (max-width: 1000px) {
     .split-content {
         flex-direction: column;
