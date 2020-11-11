@@ -6,7 +6,7 @@ function invite(msg, args) {
 
 async function replyWithInvite(message, args) {
     let invite = await message.channel.createInvite({
-            maxAge: 10 * 60 * 1000, // maximum time for the invite, in milliseconds
+            maxAge: 8640, // maximum time for the invite, in milliseconds
             maxUses: 1 // maximum times it can be used
         },
         `Requested with command by ${message.author.tag}`
