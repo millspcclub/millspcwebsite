@@ -12,7 +12,7 @@ async function replyWithInvite(message, args) {
         `Requested with command by ${message.author.tag}`
     ).catch(console.log);
     
-    message.reply(invite ? `[${args}]Here's your invite: ${invite}` : "There has been an error during the creation of the invite.");
+    message.send(invite ? `[${args}]Here's your invite: ${invite}` : "There has been an error during the creation of the invite.");
 }
     
 module.exports = {
