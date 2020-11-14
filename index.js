@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 
+
 app.locals.basedir = __dirname;
 app.use("/assets", express.static(__dirname + "/public/assets"));
 app.get("/", (req, res) => {
@@ -40,4 +41,5 @@ app.get("*", (req, res) => {
 
 
 app.listen(100);
+require("dotenv").config();
 module.exports = app;
