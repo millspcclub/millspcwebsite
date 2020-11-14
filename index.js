@@ -8,17 +8,12 @@ app.get("/", (req, res) => {
     res.sendFile(__dirname + "/public/home.html");
 });
 
-app.get("/dashboard", (req, res) => {
+app.post("/dashboard", (req, res) => {
     res.sendFile(__dirname + "/public/dashboard.html");
 });
 
 app.get("/support", (req, res) => {
-    if (req.header.cookie && req.header.cookie.contains(`data=${process.env.PASSWORD}`)) {
-        res.sendFile(__dirname + "/public/support.html");
-    } else {
-        console.log(req.header);
-        res.send("Wrong Password lol");
-    }
+    res.sendFile(__dirname + "/public/support.html");
 });
 
 app.get("/homebutton", (req, res) => {
@@ -33,9 +28,17 @@ app.get("/sitemap.xml", (req, res) => {
     res.sendFile(__dirname + "/sitemap.xml");
 });
 
+app.get("/login", (req, res) => {
+    res.sendFile(__dirname + "/public/login.html");
+});
+
+
+
 app.get("*", (req, res) => {
     res.sendFile(__dirname + "/public/404.html");
 });
+
+
 
 app.listen(100);
 require("dotenv").config();
