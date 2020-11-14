@@ -47,7 +47,9 @@ app.get("*", (req, res) => {
 });
 
 
-
 app.listen(100);
+console.log("\n========[ Webiste deployed ] ========");
+console.log(" · To access the site locally: localhost:100");
+console.log(` · To access the site externally: ${require("ip").address()}:100`);
 require("dotenv").config();
 module.exports = app;
