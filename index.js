@@ -8,8 +8,13 @@ app.get("/", (req, res) => {
     res.sendFile(__dirname + "/public/home.html");
 });
 
-app.post("/dashboard", (req, res) => {
-    res.sendFile(__dirname + "/public/dashboard.html");
+app.all("/dashboard", (req, res) => {
+    if (req.headers.cookie && req.headers.cookie.includes(`data=${process.env.PASSWORD}`)) {
+        res.redirect("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+        //res.sendFile(__dirname + "/public/dashboard.html");
+    } else {
+        res.redirect("/login?bad");
+    }
 });
 
 app.get("/support", (req, res) => {
@@ -31,7 +36,6 @@ app.get("/sitemap.xml", (req, res) => {
 app.get("/login", (req, res) => {
     res.sendFile(__dirname + "/public/login.html");
 });
-
 
 
 app.get("*", (req, res) => {

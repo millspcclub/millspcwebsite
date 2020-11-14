@@ -11,13 +11,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/3.0.0-beta.6/aos.css" integrity="sha256-hpX1/GTWVZP5djpbKNFLw048+AIxfh/60hJafI/t+v4=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" />
     <link href="/assets/styles/main.css" rel="stylesheet">
-    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
-    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css" rel="stylesheet">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/3.0.0-beta.6/aos.js" integrity="sha256-3R+azxOxLxidpHXg8jx8UFdnhZq2IKrGNpZJdAk8KB0=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js" integrity="sha512-YSdqvJoZr83hj76AIVdOcvLWYMWzy6sJyIMic2aQz5kh2bPTd9dzY3NtdeEAzPp/PhgZqr4aJObB3ym/vsItMg==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.0.2/tilt.jquery.min.js" integrity="sha512-14AZ/DxUrlF26z6v7egDkpJHKyJRn/7ue2BgpWZ/fmqrqVzf4PrQnToy99sHmKwzKev/VZ1tjPxusuTV/n8CcQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha512/0.8.0/sha512.min.js" integrity="sha512-KUrAWA1oxsWKHBaA2mlZyRuR8zzzHHYgpDfkfPrT3FhlZ4YdXbXyE89VHI6WmWradSHtuZjLyLAMP2F7IWK4JQ==" crossorigin="anonymous"></script>
     <title>Mills PC Club!</title>
 </head>
 
@@ -25,30 +22,28 @@
     <div class="form-section">
         <div class="text">
             <img src="/assets/images/logo.png" style="filter: drop-shadow(rgba(0,0,0,0.7) 0 0 0);" width="100">
-            <h3>MHS PC Club</h3>
+            <h3 id="log">MHS PC Club</h3>
             <h1>Please Log-In!</h1>
         </div>
 
         <div data-aos-delay="100" data-aos="zoom-out" class="form-card">
-            <form enctype="multipart/form-data" id="support-form" action="/dashboard" method="post" id="data">
+            <form id="support-form" onsubmit="setAuth()" action="/dashboard">
                 <div class="block">
-                    <input required data-aos-duration="800" data-aos="flip-up" type="password" name="pass" placeholder="Password" value=""/>
-
+                    <input id="pswd" required data-aos-duration="800" data-aos="flip-up" type="password" placeholder="Password"/>
                 </div>
 
-
-
-
                 <div data-aos-delay="1000" data-aos="flip-up" lass="block full">
-                    <!-- <input type="hidden" id="captchaResponse" name="g-recaptcha-response" /> -->
                     <button type="submit" class="dark-button">Submit</div>
                 </div>
             </form>
         </div>
     </div>
-
-
     <script>
+        if (window.location.href.includes("?bad")) {
+            $("#log").html("<span class='red'>Incorrect Password</span>");
+        }
+
+        function setAuth() { document.cookie=`data=${sha512(document.getElementById("pswd").value)}` }
 
         AOS.init({
             duration: 1000,
