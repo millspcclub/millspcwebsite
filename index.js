@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 
+
 app.locals.basedir = __dirname;
 app.use("/assets", express.static(__dirname + "/public/assets"));
 app.get("/", (req, res) => {
@@ -12,7 +13,12 @@ app.get("/dashboard", (req, res) => {
 });
 
 app.get("/support", (req, res) => {
-    res.sendFile(__dirname + "/public/support.html");
+    if (req.header.cookie && req.header.cookie.contains(`data=${process.env.PASSWORD}`)) {
+        res.sendFile(__dirname + "/public/support.html");
+    } else {
+        console.log(req.header);
+        res.send("Wrong Password lol");
+    }
 });
 
 app.get("/homebutton", (req, res) => {
@@ -32,4 +38,5 @@ app.get("*", (req, res) => {
 });
 
 app.listen(100);
+require("dotenv").config();
 module.exports = app;
