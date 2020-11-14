@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:padding="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta name="google-site-verification" content="wbXWDzrlGPDYe5i5khulZPNR__f6cjYzZqVr5P0l81g" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link rel="shortcut icon" href="/assets/images/logo.png" />
+    <link rel="apple-touch-icon" sizes="128x128" href="/assets/images/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/3.0.0-beta.6/aos.css" integrity="sha256-hpX1/GTWVZP5djpbKNFLw048+AIxfh/60hJafI/t+v4=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" />
+    <link href="/assets/styles/main.css" rel="stylesheet">
+    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/3.0.0-beta.6/aos.js" integrity="sha256-3R+azxOxLxidpHXg8jx8UFdnhZq2IKrGNpZJdAk8KB0=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js" integrity="sha512-YSdqvJoZr83hj76AIVdOcvLWYMWzy6sJyIMic2aQz5kh2bPTd9dzY3NtdeEAzPp/PhgZqr4aJObB3ym/vsItMg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.0.2/tilt.jquery.min.js" integrity="sha512-14AZ/DxUrlF26z6v7egDkpJHKyJRn/7ue2BgpWZ/fmqrqVzf4PrQnToy99sHmKwzKev/VZ1tjPxusuTV/n8CcQ==" crossorigin="anonymous"></script>
+    <title>Mills PC Club!</title>
+</head>
+
+<body style="background: #fff;">
+    <div class="form-section">
+        <div class="text">
+            <img src="/assets/images/logo.png" style="filter: drop-shadow(rgba(0,0,0,0.7) 0 0 0);" width="100">
+            <h3>MHS PC Club</h3>
+            <h1>Please Log-In!</h1>
+        </div>
+
+        <div data-aos-delay="100" data-aos="zoom-out" class="form-card">
+            <form enctype="multipart/form-data" id="support-form" action="/dashboard" method="post" id="data">
+                <div class="block">
+                    <input required data-aos-duration="800" data-aos="flip-up" type="password" name="pass" placeholder="Password" value=""/>
+
+                </div>
+
+
+
+
+                <div data-aos-delay="1000" data-aos="flip-up" lass="block full">
+                    <!-- <input type="hidden" id="captchaResponse" name="g-recaptcha-response" /> -->
+                    <button type="submit" class="dark-button">Submit</div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+
+        AOS.init({
+            duration: 1000,
+            delay: 500,
+            easing: "easeInOutQuint",
+        });
+    </script>
+</body>
+
+</html>

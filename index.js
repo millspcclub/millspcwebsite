@@ -7,7 +7,7 @@ app.get("/", (req, res) => {
     res.sendFile(__dirname + "/public/home.html");
 });
 
-app.get("/dashboard", (req, res) => {
+app.post("/dashboard", (req, res) => {
     res.sendFile(__dirname + "/public/dashboard.html");
 });
 
@@ -27,9 +27,17 @@ app.get("/sitemap.xml", (req, res) => {
     res.sendFile(__dirname + "/sitemap.xml");
 });
 
+app.get("/login", (req, res) => {
+    res.sendFile(__dirname + "/public/login.html");
+});
+
+
+
 app.get("*", (req, res) => {
     res.sendFile(__dirname + "/public/404.html");
 });
+
+
 
 app.listen(100);
 module.exports = app;
