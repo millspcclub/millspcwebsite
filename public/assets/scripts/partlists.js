@@ -11,6 +11,12 @@
         "<i style='color: #FF5555' class='fas fa-stack-1x fa-gem'></i>"
     ];
 
+    function stars(model, ranks) {
+        return ranks[
+            Object.keys(ranks).filter(key => key.toLowerCase() === model.toLowerCase())
+        ];
+    }
+
     fetch("https://raw.githubusercontent.com/millspcclub/millspcwebsite/master/clubdata/partlists.json")
         .then(response => response.json())
         .then(data => {
@@ -36,8 +42,8 @@
                                 )
                                 .append(
                                     $('<span class="stars"></span>')
-                                    .append(star % 1 != 0 ? '<i style="color: #FFCC00; margin-left: 5px" class="fas fa-flip-horizontal fa-star-half"></i>' : "")
-                                    .append(star.repeat(Math.floor(data.ratings[partlist.cpu])))
+                                    .append(stars(partlist.cpu, data.ratings) % 1 != 0 ? '<i style="color: #FFCC00; margin-left: 5px" class="fas fa-flip-horizontal fa-star-half"></i>' : "")
+                                    .append(star.repeat(Math.floor(stars(partlist.cpu, data.ratings))))
                                 )
                             )
                             .append(
@@ -47,7 +53,11 @@
                                     .append("<span class='label'>Graphics</span>")
                                     .append(`<span class='model'>${partlist.gpu}</span>`)
                                 )
-                                .append(`<span class="stars">${star.repeat([data.ratings[partlist.gpu]])}</span>`)
+                                .append(
+                                    $('<span class="stars"></span>')
+                                    .append(stars(partlist.gpu, data.ratings) % 1 != 0 ? '<i style="color: #FFCC00; margin-left: 5px" class="fas fa-flip-horizontal fa-star-half"></i>' : "")
+                                    .append(star.repeat(Math.floor(stars(partlist.gpu, data.ratings))))
+                                )
                             )
                             .append(
                                 $('<div class="full-row fullest"></div>')
