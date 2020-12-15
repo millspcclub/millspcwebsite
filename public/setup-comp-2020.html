@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/assets/styles/main.css">
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.0.2/tilt.jquery.min.js" integrity="sha512-14AZ/DxUrlF26z6v7egDkpJHKyJRn/7ue2BgpWZ/fmqrqVzf4PrQnToy99sHmKwzKev/VZ1tjPxusuTV/n8CcQ==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/3.0.0-beta.6/aos.js" integrity="sha256-3R+azxOxLxidpHXg8jx8UFdnhZq2IKrGNpZJdAk8KB0=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js" integrity="sha512-YSdqvJoZr83hj76AIVdOcvLWYMWzy6sJyIMic2aQz5kh2bPTd9dzY3NtdeEAzPp/PhgZqr4aJObB3ym/vsItMg==" crossorigin="anonymous"></script>
     <title>Setup Competition 2020 | Mills PC Club!</title>
@@ -36,7 +37,7 @@
                     <div class="left">
                         <h1>About</h1>
                         <p>
-                            Mills PC Club is hosting the first setup competition this year! Throughout the submission phase, PC Club will release examples, guides, and tips to help you improve your setup and gain an edge against your competitors.
+                            <a href="/">Mills PC Club</a> is hosting the first setup competition this year! Throughout the submission phase, PC Club will release examples, guides, and tips to help you improve your setup and gain an edge against your competitors.
                         </p>
                     </div>
                     <div class="slide-left">
@@ -46,15 +47,15 @@
                 <hr>
                 <div class="float-controller slide-in split-content reverse padding-v">
                     <div class="left slide-right">
-                        <img class="smaller floats" src="/assets/images/room2.png">
+                        <img class="smaller floats" src="/assets/images/gaming-room.png">
                     </div>
                     <div class="left">
                         <h1>Prizes</h1>
                         <p>
                             Prizes are separated into three tiers or levels. As more participants join the competition, another tier is unlocked, gaining access to more prizes and one more winner.
                         </p>
-
-                        <a class="btn">More info about prizes</a>
+                        
+                        <a href="#prizes" class="btn">Unlocked Prizes</a>
                     </div>
                 </div>
                 <hr>
@@ -65,9 +66,9 @@
                             <li>Participants must be a <strong>current</strong> Mills student or teacher.</li>
                             <li>An individual must submit their own setup.</li>
                             <li>There may only be one entry per competitor.</li>
-                            <li>1st place winner may choose from the highest unlocked tier and any tiers below.</li>
-                            <li>2nd place winner may only choose from second highest unlocked tier and any tiers below.</li>
-                            <li>3rd place winner may only choose from the lowest tier.</li>
+                            <li>1st place may only choose up to the highest unlocked tier.</li>
+                            <li>2nd place may only choose up to the second highest unlocked tier.</li>
+                            <li>3rd place may only choose from the lowest unlocked tier.</li>
                         </ul>
                     </div>
                     <div class="slide-left">
@@ -80,6 +81,108 @@
         <section class="section dark tall70">
             <div class="typeform-widget" data-url="https://form.typeform.com/to/KkuwEoe5?typeform-medium=embed-snippet#r=xxxxx&c=xxxxx" data-hide-headers="true" data-hide-footer="true" style="width: 100%;"></div> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm", b="https://embed.typeform.com/"; if(!gi.call(d,id)) { js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
         </section>
+        <section data-scroll-section class="section dark" id="prizes">
+            <div class="main-content bigger">
+                <div class="space"></div>
+                <h1 style="text-align: center; color: #2BB3FF">Prizes</h1>
+                <h3 style="text-align: center; opacity: 0.3; margin: 0">[0/15] more participants to unlock next tier</h3>
+                <div id="home-partlist" class="grid spaced">
+                    <div class="card-link">
+                        <card>
+                            <span class="fa-stack fa-2x">
+                                <i style="color: #F4F4F4" class="fa fa-circle fa-stack-2x"></i>
+                                <i style='color: #14d36d' class='fas fa-stack-1x fa-headphones'></i>
+                            </span>
+                            <div class="full-row">
+                                <h3>Headset Holder</h3>
+                                <div class="price">TIER 1</div>
+                            </div>
+                            <div class="inner">
+                                <div class="full-row fullest">
+                                    <div class="vert">
+                                        <span class="label">About</span>
+                                        <span class="model">Store up to two headphones under your table.</span>
+                                    </div>
+                                    <span class="stars">
+                                        <img class="clip-circle" src="/assets/images/headset-holder.png" width=80>
+                                    </span>
+                                </div>
+                                <div class="full-row fullest">
+                                    <div class="vert">
+                                        <span class="label">Availiblity</span>
+                                        <span class="model">1st place winner only</span>
+                                    </div>
+                                    <span class="ram-size">Prize</span>
+                                </div>
+                            </div>
+                        </card>
+                    </div>
+                    
+                    <div class="card-link">
+                        <card>
+                            <span class="fa-stack fa-2x">
+                                <i style="color: #F4F4F4" class="fa fa-circle fa-stack-2x"></i>
+                                <i style='color: #14d36d' class='fas fa-stack-1x fa-circle-notch'></i>
+                            </span>
+                            <div class="full-row">
+                                <h3>Cable Clips</h3>
+                                <div class="price">TIER 1</div>
+                            </div>
+                            <div class="inner">
+                                <div class="full-row fullest">
+                                    <div class="vert">
+                                        <span class="label">About</span>
+                                        <span class="model">(16x) Organize your cables and never lose them again.</span>
+                                    </div>
+                                    <span class="stars">
+                                        <img class="clip-circle" src="/assets/images/clips.png" height=80>
+                                    </span>
+                                </div>
+                                <div class="full-row fullest">
+                                    <div class="vert">
+                                        <span class="label">Availiblity</span>
+                                        <span class="model">1st place winner only</span>
+                                    </div>
+                                    <span class="ram-size">Prize</span>
+                                </div>
+                            </div>
+                        </card>
+                    </div>
+
+                    <div class="card-link">
+                        <card>
+                            <span class="fa-stack fa-2x">
+                                <i style="color: #F4F4F4" class="fa fa-circle fa-stack-2x"></i>
+                                <i style='color: #14d36d' class='fas fa-stack-1x fa-plug'></i>
+                            </span>
+                            <div class="full-row">
+                                <h3>Smart Plug</h3>
+                                <div class="price">TIER 1</div>
+                            </div>
+                            <div class="inner">
+                                <div class="full-row fullest">
+                                    <div class="vert">
+                                        <span class="label">About</span>
+                                        <span class="model">Control your outlet remotely. Compatible with Google and Alexa.</span>
+                                    </div>
+                                    <span class="stars">
+                                        <img class="clip-circle" src="/assets/images/clips.png" height=80>
+                                    </span>
+                                </div>
+                                <div class="full-row fullest">
+                                    <div class="vert">
+                                        <span class="label">Availiblity</span>
+                                        <span class="model">1st place winner only</span>
+                                    </div>
+                                    <span class="ram-size">Prize</span>
+                                </div>
+                            </div>
+                        </card>
+                    </div>
+                </div>
+                <div class="space"></div>
+            </div>
+        </section>
         <div data-scroll-section style="background: #fff;">
             <div class="footer">
                 <h2 style="text-align: center">Credits</h2>
@@ -87,8 +190,18 @@
                     <div>
                         <p><strong>Developers:</strong> Curtis and Nathan</p>
                         <hr>
-                        <p>Official Website of Mill's PC Club (https://millspc.ddns.net/ & pcclub.now.sh)</p>
+                        <p>Official Website of Mill's PC Club (pcclub.now.sh)</p>
                         <p>Anything else is fake--avoid it!</p>
+                        <hr>
+                        <a href="https://dribbble.com/shots/7110689-Isometric-Home-Office">
+                            <p>Isometric Home Office by Brian Moon</p>
+                        </a>
+                        <a href="https://dribbble.com/shots/14156313-Gaming-Room">
+                            <p>Gaming Room by Roman Klco</p>
+                        </a>
+                        <a href="https://dribbble.com/shots/7110689-Isometric-Home-Office">
+                            <p>Isometric Home Office by Brian Moon</p>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -96,65 +209,71 @@
     </div>
     <script src="/assets/scripts/lax.min.js" ></script>
     <script>
-        window.onload = function () {
-            lax.init();
+        lax.init();
         
-            // Add a driver that we use to control our animations
-            lax.addDriver('scrollY', function () {
-                return window.scrollY
-            }, {
-                frameStep: 0.5
-            })
+        // Add a driver that we use to control our animations
+        lax.addDriver('scrollY', function () {
+            return window.scrollY
+        }, {
+            frameStep: 0.5
+        })
         
-            // Add animation bindings to elements
-            lax.addElements('.zoom-out', {
-                scrollY: {
-                    translateY: [
-                        [0, "elOutY"],
-                        [0, 200]
-                    ],
-                    scale: [
-                        [0, "elOutY"],
-                        [1, 1.3]
-                    ]
-                }
-            })
-
-            lax.addElements('.slide-in', {
-                scrollY: {
-                    translateY: [
-                        ["elInY", "elCenterY"],
-                        [400, 0]
-                    ],
-                    opacity: [
-                        ["elInY", "elCenterY"],
-                        [0, 1]
-                    ],
-                    scale: [
-                        ["elInY", "elCenterY"],
-                        [1.5, 1]
-                    ]
-                }
-            })
-
-            lax.addElements('.slide-left', {
-                scrollY: {
-                    translateX: [
-                        ["elInY", "elOutY"],
-                        [100, -100]
-                    ]
-                }
-            })
-
-            lax.addElements('.slide-right', {
-                scrollY: {
-                    translateX: [
-                        ["elInY", "elOutY"],
-                        [-100, 100]
-                    ]
-                }
-            })
+        // Add animation bindings to elements
+        lax.addElements('.zoom-out', {
+            scrollY: {
+                translateY: [
+                [0, "elOutY"],
+                [0, 200]
+                ],
+                scale: [
+                [0, "elOutY"],
+                [1, 1.3]
+                ]
+            }
+        })
+        
+        lax.addElements('.slide-in', {
+            scrollY: {
+                translateY: [
+                ["elInY", "elCenterY"],
+                [400, 0]
+                ],
+                opacity: [
+                ["elInY", "elCenterY"],
+                [0, 1]
+                ],
+                scale: [
+                ["elInY", "elCenterY"],
+                [1.5, 1]
+                ]
+            }
+        })
+        
+        lax.addElements('.slide-left', {
+            scrollY: {
+                translateX: [
+                ["elInY", "elOutY"],
+                [100, -100]
+                ]
+            }
+        })
+        
+        lax.addElements('.slide-right', {
+            scrollY: {
+                translateX: [
+                ["elInY", "elOutY"],
+                [-100, 100]
+                ]
+            }
+        })
+        
+        if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            $(".card-link").tilt({
+                scale: 1.05,
+                glare: true,
+                maxGlare: 1
+            });
         }
-      </script>
+    </script>
 </body>
 </html>
