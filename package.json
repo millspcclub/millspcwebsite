@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/Thelolguy1/millspcwebsite#readme",
   "dependencies": {
-    "discord.js": "^12.4.1",
+    "discord.js": "^12.5.1",
     "discord.js-selfbot": "^12.0.2",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",

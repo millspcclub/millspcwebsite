@@ -22,7 +22,7 @@
         .then(data => {
             for (const partlist of data.lists) {
                 if (partlist.featured) {
-                    var innerCard = $("<div class='inner'></div>")
+                    var innerCard = $("<div class='inner'></div>");
 
                     var card = $("<card></card.text>")
                         .append(`<span class="fa-stack fa-2x">${circle + icons[partlist.type]}</span>`)
