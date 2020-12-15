@@ -25,6 +25,10 @@ app.get("/homebutton", (req, res) => {
     res.sendFile(__dirname + "/public/button.html");
 });
 
+app.get("/competition-2020", (req, res) => {
+    res.sendFile(__dirname + "/public/setup-comp-2020.html");
+});
+
 app.get("/data/parts", (req, res) => {
     res.sendFile(__dirname + "/clubdata/partlists.json");
 });
