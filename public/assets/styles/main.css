@@ -675,15 +675,11 @@ form .block.full {
     padding: 10vh 0;
 }
 
-img.shadow {
-    -webkit-filter: drop-shadow(rgba(0,0,0,0.35) 0 10px 15px);
-            filter: drop-shadow(rgba(0,0,0,0.35) 0 10px 15px)
-}
-
 img.floats {
-    -webkit-filter: saturate(0.3);
-            filter: saturate(0.3);
+    -webkit-filter: saturate(0.3) drop-shadow(rgba(0,0,0,0.35) 0 10px 15px);
+            filter: saturate(0.3) drop-shadow(rgba(0,0,0,0.35) 0 10px 15px);
     transition: all .4s ease-out;
+    -webkit-transition: all .4s ease-out;
 }
 
 .float-controller:hover img.floats,
