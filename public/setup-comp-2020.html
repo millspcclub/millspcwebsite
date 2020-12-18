@@ -79,7 +79,10 @@
             
         </section>
         <section class="section dark tall70">
-            <div class="typeform-widget" data-url="https://form.typeform.com/to/KkuwEoe5?typeform-medium=embed-snippet#r=xxxxx&c=xxxxx" data-hide-headers="true" data-hide-footer="true" style="width: 100%;"></div> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm", b="https://embed.typeform.com/"; if(!gi.call(d,id)) { js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
+            <noscript>
+                <h3>Requires JS to submit form</h3>
+            </noscript>
+            <div id="form" class="typeform-widget" data-hide-headers="true" data-hide-footer="true" style="width: 100%;"></div>
         </section>
         <section data-scroll-section class="section dark" id="prizes">
             <div class="main-content bigger">
@@ -148,7 +151,7 @@
                             </div>
                         </card>
                     </div>
-
+                    
                     <div class="card-link">
                         <card>
                             <span class="fa-stack fa-2x">
@@ -166,7 +169,7 @@
                                         <span class="model">Control your outlet remotely. Compatible with Google and Alexa.</span>
                                     </div>
                                     <span class="stars">
-                                        <img class="clip-circle" src="/assets/images/clips.png" height=80>
+                                        <img class="clip-circle" src="/assets/images/smartplug.png" height=80>
                                     </span>
                                 </div>
                                 <div class="full-row fullest">
@@ -274,6 +277,18 @@
                 maxGlare: 1
             });
         }
+    </script>
+    <script>
+        function uuid() {
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+                return v.toString(16);
+            });
+        }
+        
+        document.getElementById("form").setAttribute("data-url", "https://form.typeform.com/to/KkuwEoe5?typeform-medium=embed-snippet#r=w&c=" + uuid());
+        // Init typeform
+        (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm", b="https://embed.typeform.com/"; if(!gi.call(d,id)) { js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() 
     </script>
 </body>
 </html>
