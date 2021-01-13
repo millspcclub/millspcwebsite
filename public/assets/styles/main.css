@@ -36,6 +36,10 @@ a {
     color: #2bb3ffcc;
 }
 
+a.yellow {
+    color: #ffcc00;
+}
+
 p,
 li {
     opacity: .8;
