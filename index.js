@@ -49,7 +49,7 @@ app.get("*", (req, res) => {
 
 app.listen(100);
 console.log("\n========[ Webiste deployed ] ========");
-console.log(" · To access the site locally: localhost:100");
-console.log(` · To access the site externally: ${require("ip").address()}:100`);
+console.log(" [§] To access the site locally: \x1b[33mlocalhost:100\x1b[0m");
+console.log(` [§] To access the site externally: \x1b[32m${require("ip").address()}:100\x1b[0m`);
 require("dotenv").config();
 module.exports = app;
