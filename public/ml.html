@@ -1,0 +1,273 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Paul's Network</title>
+    <meta name="google-site-verification" content="wbXWDzrlGPDYe5i5khulZPNR__f6cjYzZqVr5P0l81g" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" sizes="128x128" href="/assets/images/logo.png">
+    <style>
+        body {
+            background: white;
+            font-family: 'Fira Code', monospace;
+            margin: 0;
+            position: relative;
+        }
+        
+        .bold {
+            font-weight: bold;
+        }
+        
+        .intro {
+            background: white;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+        }
+        
+        .intro {
+            height: 99vh;
+        }
+        
+        @media only screen and (max-width: 600px) {
+            .intro {
+                height: 87vh;
+            }
+        }
+        
+        .title {
+            font-size: 50px;
+            margin: 0;
+        }
+        
+        .subtitle {
+            font-size: 22px;
+            color: #727272;
+            margin-bottom: 30px;
+        }
+        
+        .camerathing {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+        }
+        
+        #announcements {
+            color: white;
+            text-align: center;
+            background: black;
+            padding: 50px;
+        }
+        
+        .icons {
+            width: 30px;
+            border: 0;
+        }
+        
+        .discord-widget
+        /*For the stupid discord widget that won't behave*/
+        
+        {
+            float: right;
+        }
+        
+        a:link,
+        a:visited {
+            text-decoration: none;
+            color: rgba(43, 179, 255, 0.8)
+        }
+        
+        a:link:hover,
+        a:visited:hover {
+            color: rgba(43, 179, 255, 0.61)
+        }
+        
+        .section {
+            background: #191919;
+        }
+        
+        .main-content {
+            margin: 0 auto;
+            color: white;
+            padding: 40px 20px;
+            overflow-x: hidden;
+            max-width: 1000px;
+        }
+        
+        .main-content>div>p {
+            line-height: 1.4;
+        }
+        
+        .main-content>div>ul {
+            line-height: 1.4;
+        }
+        
+        .btn {
+            margin: 0 auto;
+            line-height: 50px;
+            height: 50px;
+            text-align: center;
+            width: 250px;
+        }
+        
+        .btn-one {
+            color: #5e5e5e;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .btn-one span {
+            transition: all 0.3s;
+        }
+        
+        .btn-one::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0;
+            transition: all 0.3s;
+            border-top-width: 1px;
+            border-bottom-width: 1px;
+            border-top-style: solid;
+            border-bottom-style: solid;
+            border-top-color: rgba(50, 50, 50, 0.5);
+            border-bottom-color: rgba(50, 50, 50, 0.5);
+            transform: scale(0.1, 1);
+        }
+        
+        .btn-one:hover span {
+            letter-spacing: 2px;
+        }
+        
+        .btn-one:hover::before {
+            opacity: 1;
+            transform: scale(1, 1);
+        }
+        
+        .btn-one::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            transition: all 0.3s;
+            background-color: rgba(0, 104, 157, 0.19);
+        }
+        
+        .btn-one:hover::after {
+            opacity: 0;
+            transform: scale(0.1, 1);
+        }
+        
+        .footer {
+            padding: 5vh 20px 20px;
+            margin: 0 auto;
+            max-width: 1000px;
+        }
+        
+        .stuff {
+            font-size: 12px;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Fira+Code:400,600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="intro">
+            <div>
+                <img src="https://cdn2.iconfinder.com/data/icons/artificial-intelligence-ai/64/digital-brain-ai-machine-learning-artificial-intelligence-512.png" style="width: 150px">
+                <h1>Anime or Human? Find out:</h1>
+                <p class="subtitle bold">Just click start! Webcam needed.</p>
+                <a href="javascript:init()">
+                    <div class="btn btn-one">
+                        <span class="bold" style="font: Consolas">START!</span>
+                    </div>
+                </a>
+                <div style="margin: 20px" id="webcam-container"></div>
+                <div style="margin: 20px" id="label-container"></div>
+            </div>
+        </div>
+        <div style="background: #fff;">
+            <div class="footer">
+                <h2 style="text-align: center">Credits</h2>
+                <div class="stuff">
+                    <div>
+                        <p>Devs: Curtis and Nathan Choi</p>
+                        <hr style="color: whitesmoke; border: none; border-bottom: 1px solid #1f1209;">
+                        <p>Official Website of Mill's PC Club (https://millspc.ddns.net/ or https://pcclub.now.sh)</p>
+                        <p>Anything else is fake--avoid it!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+    <script type="text/javascript">
+        // More API functions here:
+        // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
+
+        // the link to your model provided by Teachable Machine export panel
+        const URL = "https://teachablemachine.withgoogle.com/models/5udhpYxx/";
+
+        let model, webcam, labelContainer, maxPredictions;
+
+        // Load the image model and setup the webcam
+        async function init() {
+            const modelURL = URL + "model.json";
+            const metadataURL = URL + "metadata.json";
+
+            // load the model and metadata
+            // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
+            // or files from your local hard drive
+            // Note: the pose library adds "tmImage" object to your window (window.tmImage)
+            model = await tmImage.load(modelURL, metadataURL);
+            maxPredictions = model.getTotalClasses();
+
+            // Convenience function to setup a webcam
+            const flip = true; // whether to flip the webcam
+            webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
+            await webcam.setup(); // request access to the webcam
+            await webcam.play();
+            window.requestAnimationFrame(loop);
+
+            // append elements to the DOM
+            document.getElementById("webcam-container").appendChild(webcam.canvas);
+            labelContainer = document.getElementById("label-container");
+            for (let i = 0; i < maxPredictions; i++) { // and class labels
+                labelContainer.appendChild(document.createElement("div"));
+            }
+        }
+
+        async function loop() {
+            webcam.update(); // update the webcam frame
+            await predict();
+            window.requestAnimationFrame(loop);
+        }
+
+        // run the webcam image through the image model
+        async function predict() {
+            // predict can take in an image, video or canvas html element
+            const prediction = await model.predict(webcam.canvas);
+            for (let i = 0; i < maxPredictions; i++) {
+                const classPrediction =
+                    prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+                labelContainer.childNodes[i].innerHTML = classPrediction;
+            }
+        }
+    </script>
+</body>
+
+</html>

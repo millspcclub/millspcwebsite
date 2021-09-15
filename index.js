@@ -41,6 +41,9 @@ app.get("/login", (req, res) => {
     res.sendFile(__dirname + "/public/login.html");
 });
 
+app.get("/ml", (req, res) => {
+    res.sendFile(__dirname + "/public/ml.html");
+});
 
 app.get("*", (req, res) => {
     res.sendFile(__dirname + "/public/404.html");
