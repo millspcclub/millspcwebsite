@@ -1,32 +1,29 @@
 {
-  "name": "millspcwebsite",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Thelolguy1/millspcwebsite.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Thelolguy1/millspcwebsite/issues"
-  },
-  "homepage": "https://github.com/Thelolguy1/millspcwebsite#readme",
-  "dependencies": {
-    "discord.js": "^12.5.1",
-    "discord.js-selfbot": "^12.0.2",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "express-static": "^1.2.6",
-    "node-fetch": "^2.6.1",
-    "nodemon": "^2.0.6",
-    "puppeteer": "^5.5.0"
-  }
+    "name": "millspcwebsite",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "directories": {
+        "doc": "docs"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Thelolguy1/millspcwebsite.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Thelolguy1/millspcwebsite/issues"
+    },
+    "homepage": "https://github.com/Thelolguy1/millspcwebsite#readme",
+    "dependencies": {
+        "discord.js": "^13.1.0",
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "express-static": "^1.2.6",
+        "node-fetch": "^3.0.0"
+    }
 }
